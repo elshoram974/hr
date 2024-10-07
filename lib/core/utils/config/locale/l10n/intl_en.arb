@@ -1,0 +1,97 @@
+{
+    "pageNumberMustBiggerThan0": "pageNumber must be bigger than 0",
+    "noInternet": "No internet",
+    "addPost": "Add post",
+    "editPost": "Edit post",
+    "needsSynchronization": "Needs synchronization",
+    "createdAt": "Created at {createdDate}",
+    "@createdAt": {
+        "placeholders": {
+            "createdDate": {
+                "type": "String"
+            }
+        }
+    },
+    "lastUpdatedAt": "Last update at {updatedDate}",
+    "@updatedAt": {
+        "placeholders": {
+            "updatedDate": {
+                "type": "String"
+            }
+        }
+    },
+    "noData": "No Data",
+    "allRecords": "All records",
+    "qrCode": "QR code",
+    "thereIsRecord": "There is a record",
+    "HiPersonChooseWhatUWant": "Hi {personName}, What do you want to do now?",
+    "@HiPersonChooseWhatUWant": {
+        "placeholders": {
+            "personName": {
+                "type": "String"
+            }
+        }
+    },
+    "unknown": "Unknown",
+    "pageNotFound": "Page not found",
+    "returnBack": "Return back",
+    "pageNameNotFoundInRoutes": "Page '{pageName}' not found in routes",
+    "@pageNameNotFoundInRoutes": {
+        "placeholders": {
+            "pageName": {
+                "type": "String"
+            }
+        }
+    },
+    "back": "Back",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "login": "Login",
+    "welcomeBack": "Welcome back",
+    "enterYourCredentialsToContinue": "Enter your credentials to continue.",
+    "emailAddress": "Email address",
+    "fillField": "fill this field",
+    "notSamePass": "Not same password",
+    "enterValidEmail": "Enter valid E-mail",
+    "cantBeLessThan": "Can't be less than {min}",
+    "@cantBeLessThan": {
+        "placeholders": {
+            "min": {
+                "type": "int"
+            }
+        }
+    },
+    "cantBeMoreThan": "Can't be more than {max}",
+    "@cantBeMoreThan": {
+        "placeholders": {
+            "max": {
+                "type": "int"
+            }
+        }
+    },
+    "password": "Password",
+    "forgetPassword": "Forget password ? ",
+    "recover": "Recover",
+    "signUp": "Sign up",
+    "doNotHaveAnAccount": "Don't have an account ? ",
+    "rememberMe": "Remember me",
+    "rasidTest": "Rasid Test",
+    "createYourOwnEmail": "Create your own email",
+    "name": "Name",
+    "confirmPassword": "Confirm Password",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "goBack": "Go back",
+    "stayHere": "Stay here",
+    "areYouSureYouWantToReturnBack": "Are you sure you want to return back",
+    "ifYouReturnNowYouWillLoseAllData": "If you return now, you will lose all data!",
+    "passwordProvidedIsTooWeak": "The password provided is too weak.",
+    "pressAgainToExit": "Press again to exit",
+    "accountAlreadyExistsForThatEmail": "The account already exists for that email.",
+    "noUserFoundForThatEmail": "No user found for that email.",
+    "wrongPasswordProvidedForThatUser": "Wrong password provided for that user.",
+    "theSuppliedAuthCredentialIsIncorrect": "The supplied auth credential is incorrect, malformed or has expired.",
+    "home": "Home",
+    "openQRCamera": "Open QR camera",
+    "openRecordScreen": "Open record screen"
+}
