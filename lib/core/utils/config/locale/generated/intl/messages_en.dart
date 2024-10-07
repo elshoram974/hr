@@ -39,8 +39,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "accountAlreadyExistsForThatEmail":
             MessageLookupByLibrary.simpleMessage(
                 "The account already exists for that email."),
-        "addPost": MessageLookupByLibrary.simpleMessage("Add post"),
-        "allRecords": MessageLookupByLibrary.simpleMessage("All records"),
         "areYouSureYouWantToReturnBack": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to return back"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
@@ -55,7 +53,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "createdAt": m3,
         "doNotHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
-        "editPost": MessageLookupByLibrary.simpleMessage("Edit post"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email address"),
         "enterValidEmail":
             MessageLookupByLibrary.simpleMessage("Enter valid E-mail"),
@@ -81,9 +78,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "No user found for that email."),
         "notSamePass":
             MessageLookupByLibrary.simpleMessage("Not same password"),
-        "openQRCamera": MessageLookupByLibrary.simpleMessage("Open QR camera"),
-        "openRecordScreen":
-            MessageLookupByLibrary.simpleMessage("Open record screen"),
         "pageNameNotFoundInRoutes": m5,
         "pageNotFound": MessageLookupByLibrary.simpleMessage("Page not found"),
         "pageNumberMustBiggerThan0": MessageLookupByLibrary.simpleMessage(
@@ -93,8 +87,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "The password provided is too weak."),
         "pressAgainToExit":
             MessageLookupByLibrary.simpleMessage("Press again to exit"),
-        "qrCode": MessageLookupByLibrary.simpleMessage("QR code"),
-        "rasidTest": MessageLookupByLibrary.simpleMessage("Rasid Test"),
         "recover": MessageLookupByLibrary.simpleMessage("Recover"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
         "returnBack": MessageLookupByLibrary.simpleMessage("Return back"),
@@ -104,8 +96,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "The supplied auth credential is incorrect, malformed or has expired."),
-        "thereIsRecord":
-            MessageLookupByLibrary.simpleMessage("There is a record"),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
         "wrongPasswordProvidedForThatUser":

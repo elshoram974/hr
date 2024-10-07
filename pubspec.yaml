@@ -1,6 +1,6 @@
 name: hr
 description: "The HR app simplifies employee data management, allowing you to track info, manage leave requests, and generate secure reports easily."
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -43,13 +43,11 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter:
-
   uses-material-design: true
 
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
 
   # fonts:
   #   - family: Schyler
@@ -63,3 +61,7 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+flutter_intl:
+  enabled: true
+  arb_dir: assets/languages
+  output_dir: lib/core/utils/config/locale/generated

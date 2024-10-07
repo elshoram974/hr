@@ -1,8 +1,6 @@
 {
     "pageNumberMustBiggerThan0": "pageNumber must be bigger than 0",
     "noInternet": "No internet",
-    "addPost": "Add post",
-    "editPost": "Edit post",
     "needsSynchronization": "Needs synchronization",
     "createdAt": "Created at {createdDate}",
     "@createdAt": {
@@ -21,9 +19,6 @@
         }
     },
     "noData": "No Data",
-    "allRecords": "All records",
-    "qrCode": "QR code",
-    "thereIsRecord": "There is a record",
     "HiPersonChooseWhatUWant": "Hi {personName}, What do you want to do now?",
     "@HiPersonChooseWhatUWant": {
         "placeholders": {
@@ -75,7 +70,6 @@
     "signUp": "Sign up",
     "doNotHaveAnAccount": "Don't have an account ? ",
     "rememberMe": "Remember me",
-    "rasidTest": "Rasid Test",
     "createYourOwnEmail": "Create your own email",
     "name": "Name",
     "confirmPassword": "Confirm Password",
@@ -91,7 +85,5 @@
     "noUserFoundForThatEmail": "No user found for that email.",
     "wrongPasswordProvidedForThatUser": "Wrong password provided for that user.",
     "theSuppliedAuthCredentialIsIncorrect": "The supplied auth credential is incorrect, malformed or has expired.",
-    "home": "Home",
-    "openQRCamera": "Open QR camera",
-    "openRecordScreen": "Open record screen"
+    "home": "Home"
 }

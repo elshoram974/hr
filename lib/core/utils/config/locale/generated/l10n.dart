@@ -70,26 +70,6 @@ class S {
     );
   }
 
-  /// `Add post`
-  String get addPost {
-    return Intl.message(
-      'Add post',
-      name: 'addPost',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Edit post`
-  String get editPost {
-    return Intl.message(
-      'Edit post',
-      name: 'editPost',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Needs synchronization`
   String get needsSynchronization {
     return Intl.message(
@@ -125,36 +105,6 @@ class S {
     return Intl.message(
       'No Data',
       name: 'noData',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `All records`
-  String get allRecords {
-    return Intl.message(
-      'All records',
-      name: 'allRecords',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `QR code`
-  String get qrCode {
-    return Intl.message(
-      'QR code',
-      name: 'qrCode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `There is a record`
-  String get thereIsRecord {
-    return Intl.message(
-      'There is a record',
-      name: 'thereIsRecord',
       desc: '',
       args: [],
     );
@@ -390,16 +340,6 @@ class S {
     );
   }
 
-  /// `Rasid Test`
-  String get rasidTest {
-    return Intl.message(
-      'Rasid Test',
-      name: 'rasidTest',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Create your own email`
   String get createYourOwnEmail {
     return Intl.message(
@@ -555,26 +495,6 @@ class S {
     return Intl.message(
       'Home',
       name: 'home',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Open QR camera`
-  String get openQRCamera {
-    return Intl.message(
-      'Open QR camera',
-      name: 'openQRCamera',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Open record screen`
-  String get openRecordScreen {
-    return Intl.message(
-      'Open record screen',
-      name: 'openRecordScreen',
       desc: '',
       args: [],
     );
