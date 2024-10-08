@@ -11,20 +11,26 @@ class LoginFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AuthField(
-          suffixIconData: Icons.mail_outline,
-          label: S.of(context).emailAddress,
-          hintText: S.of(context).enterEmailAddress,
-          validator: (val) => AppValidator.auth(val, 0, 100, FieldType.email),
+    return AutofillGroup(
+      child: Form(
+        child: Column(
+          children: [
+            AuthField(
+              suffixIconData: Icons.mail_outline,
+              label: S.of(context).emailAddress,
+              hintText: S.of(context).enterEmailAddress,
+              autofillHints: const [AutofillHints.email],
+              validator: (val) =>
+                  AppValidator.auth(val, 0, 100, FieldType.email),
+            ),
+            const SizedBox(height: 2 * AppConst.defaultPadding),
+            PasswordField(
+              label: S.of(context).password,
+              hintText: S.of(context).enterThePassword,
+            ),
+          ],
         ),
-        const SizedBox(height: 2 * AppConst.defaultPadding),
-        PasswordField(
-          label: S.of(context).password,
-          hintText: S.of(context).enterThePassword,
-        ),
-      ],
+      ),
     );
   }
 }

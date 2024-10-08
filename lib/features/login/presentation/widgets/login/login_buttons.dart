@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hr/core/shared/filled_button.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
@@ -24,7 +25,9 @@ class LoginButtons extends StatelessWidget {
         const SizedBox(height: 30),
         CustomFilledButton(
           text: S.of(context).login,
-          onPressed: () {},
+          onPressed: () {
+            TextInput.finishAutofillContext();
+          },
           style: context.textTheme.headlineMedium,
         ),
       ],

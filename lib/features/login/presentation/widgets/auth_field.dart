@@ -14,6 +14,7 @@ class AuthField extends StatelessWidget {
     this.onChanged,
     this.validator,
     this.controller,
+    this.autofillHints,
   });
   final TextEditingController? controller;
   final IconData suffixIconData;
@@ -21,6 +22,7 @@ class AuthField extends StatelessWidget {
   final String label;
   final Widget? suffix;
   final bool obscureText;
+  final Iterable<String>? autofillHints;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
 
@@ -47,6 +49,7 @@ class AuthField extends StatelessWidget {
           suffix: suffix,
           obscureText: obscureText,
           onChanged: onChanged,
+          autofillHints: autofillHints,
         ),
       ],
     );

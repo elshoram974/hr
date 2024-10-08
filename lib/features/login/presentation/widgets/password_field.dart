@@ -12,11 +12,13 @@ class PasswordField extends StatefulWidget {
     this.otherPass,
     this.controller,
     this.onChanged,
+    this.autofillHints,
   });
   final String? otherPass;
   final TextEditingController? controller;
   final String? hintText;
   final String label;
+  final Iterable<String>? autofillHints;
   final void Function(String)? onChanged;
 
   @override
@@ -37,6 +39,7 @@ class _PasswordFieldState extends State<PasswordField> {
       suffixIconData: Icons.lock_outline_rounded,
       label: widget.label,
       hintText: widget.hintText,
+      autofillHints: [AutofillHints.password, ...widget.autofillHints ?? []],
       suffix: IconButton(
         onPressed: () => setState(() => obscureText = !obscureText),
         color: Colors.grey,
