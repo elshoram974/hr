@@ -3,8 +3,11 @@ import 'package:get/get.dart';
 import 'package:hr/core/shared/filled_button.dart';
 import 'package:hr/core/shared/responsive/constrained_box.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
+import 'package:hr/core/utils/config/routes/routes.dart';
 import 'package:hr/core/utils/constants/app_assets.dart';
 import 'package:hr/core/utils/constants/app_constants.dart';
+import 'package:hr/core/utils/constants/app_strings.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../widgets/header_text.dart';
 import '../widgets/language_buttons.dart';
@@ -29,7 +32,7 @@ class OnBoardingScreen extends StatelessWidget {
                 const Spacer(flex: 2),
                 CustomFilledButton(
                   text: S.of(context).startNow,
-                  onPressed: () {},
+                  onPressed: goToLogin,
                   style: context.textTheme.displaySmall,
                   minimumSize: const Size(256, 64),
                 ),
@@ -42,5 +45,10 @@ class OnBoardingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void goToLogin() async {
+    await Get.find<SharedPreferences>().setBool(AppString.kIsFirstOpen, false);
+    Get.offNamed(AppRoute.login);
   }
 }

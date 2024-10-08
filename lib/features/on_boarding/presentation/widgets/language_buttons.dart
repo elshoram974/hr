@@ -9,19 +9,17 @@ class LanguageButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ConfigController configController = Get.find<ConfigController>();
     return Wrap(
       alignment: WrapAlignment.center,
       children: List.generate(
         AppInfo.supportedLocales.length,
         (index) {
           final LocaleModel l = AppInfo.supportedLocales[index];
-
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: TextButton(
-              onPressed: () {
-                Get.find<ConfigController>().changeLocale(l.locale);
-              },
+              onPressed: () => configController.changeLocale(l.locale),
               child: Text(
                 l.languageName,
                 style: const TextStyle(fontWeight: FontWeight.w600),

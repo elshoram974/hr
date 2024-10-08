@@ -25,6 +25,7 @@ class ConfigControllerImp extends ConfigController {
 
   @override
   void changeLocale(Locale newLocale) {
+    if (newLocale.languageCode == _locale) return;
     _locale = newLocale.languageCode;
     S.load(newLocale);
     Get.updateLocale(newLocale);

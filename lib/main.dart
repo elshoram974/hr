@@ -11,7 +11,7 @@ import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await InitialBindings().dependencies();
   runApp(
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: lightTheme,
       darkTheme: darkTheme,
-      getPages: AppRoute.routes,
+      getPages: AppRoute.pages,
       initialRoute: AppRoute.onBoarding,
       // initialBinding: InitialBindings(),
     );
