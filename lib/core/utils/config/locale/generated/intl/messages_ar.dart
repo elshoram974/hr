@@ -55,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا تملك حسابًا؟"),
         "emailAddress":
             MessageLookupByLibrary.simpleMessage("عنوان البريد الإلكتروني"),
+        "enterEmailAddress": MessageLookupByLibrary.simpleMessage(
+            "أدخل عنوان البريد الالكتروني"),
+        "enterThePassword":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "enterValidEmail": MessageLookupByLibrary.simpleMessage(
             "أدخل بريدًا إلكترونيًا صالحًا"),
         "enterYourCredentialsToContinue": MessageLookupByLibrary.simpleMessage(
@@ -73,6 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "إذا عدت الآن، ستفقد جميع البيانات!"),
         "lastUpdatedAt": m4,
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "loginToContinue":
+            MessageLookupByLibrary.simpleMessage("للاستمرار يرجى تسجيل الدخول"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "needsSynchronization":
             MessageLookupByLibrary.simpleMessage("يحتاج إلى مزامنة"),

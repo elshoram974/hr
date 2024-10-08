@@ -54,6 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "doNotHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email address"),
+        "enterEmailAddress":
+            MessageLookupByLibrary.simpleMessage("Enter email address"),
+        "enterThePassword":
+            MessageLookupByLibrary.simpleMessage("Enter the password"),
         "enterValidEmail":
             MessageLookupByLibrary.simpleMessage("Enter valid E-mail"),
         "enterYourCredentialsToContinue": MessageLookupByLibrary.simpleMessage(
@@ -71,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "If you return now, you will lose all data!"),
         "lastUpdatedAt": m4,
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginToContinue":
+            MessageLookupByLibrary.simpleMessage("Please log in to continue"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "needsSynchronization":
             MessageLookupByLibrary.simpleMessage("Needs synchronization"),

@@ -34,7 +34,6 @@ class OnBoardingScreen extends StatelessWidget {
                   text: S.of(context).startNow,
                   onPressed: goToLogin,
                   style: context.textTheme.displaySmall,
-                  minimumSize: const Size(256, 64),
                 ),
                 const SizedBox(height: 20),
                 const LanguageButtons(),

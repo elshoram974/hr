@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Please log in to continue`
+  String get loginToContinue {
+    return Intl.message(
+      'Please log in to continue',
+      name: 'loginToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Start Now`
   String get startNow {
     return Intl.message(
@@ -260,6 +270,16 @@ class S {
     );
   }
 
+  /// `Enter email address`
+  String get enterEmailAddress {
+    return Intl.message(
+      'Enter email address',
+      name: 'enterEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `fill this field`
   String get fillField {
     return Intl.message(
@@ -315,6 +335,16 @@ class S {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the password`
+  String get enterThePassword {
+    return Intl.message(
+      'Enter the password',
+      name: 'enterThePassword',
       desc: '',
       args: [],
     );

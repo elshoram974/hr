@@ -40,7 +40,7 @@ class CustomFilledButton extends StatelessWidget {
           onLongPress: onLongPress,
           style: FilledButton.styleFrom(
             padding: padding,
-            minimumSize: minimumSize ?? const Size(100, 48),
+            minimumSize: minimumSize ?? const Size(256, 64),
             backgroundColor: filledColor ?? context.theme.primaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(AppConst.borderRadius),

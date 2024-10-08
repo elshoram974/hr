@@ -1,4 +1,5 @@
 {
+    "loginToContinue": "للاستمرار يرجى تسجيل الدخول",
     "startNow": "البـــــدء الآن",
     "welcome": "مرحبـــــاً...",
     "humanResourcesManagement": "إدارة الموارد البشرية",
@@ -48,6 +49,7 @@
     "welcomeBack": "مرحبًا بعودتك",
     "enterYourCredentialsToContinue": "أدخل بيانات اعتمادك للمتابعة.",
     "emailAddress": "عنوان البريد الإلكتروني",
+    "enterEmailAddress": "أدخل عنوان البريد الالكتروني",
     "fillField": "املأ هذا الحقل",
     "notSamePass": "كلمة المرور غير متطابقة",
     "enterValidEmail": "أدخل بريدًا إلكترونيًا صالحًا",
@@ -68,6 +70,7 @@
         }
     },
     "password": "كلمة المرور",
+    "enterThePassword": "أدخل كلمة المرور",
     "forgetPassword": "نسيت كلمة المرور؟",
     "recover": "استعادة",
     "signUp": "التسجيل",
