@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import '../utils/constants/app_constants.dart';
 
-class MyFilledButton extends StatelessWidget {
-  const MyFilledButton({
+class CustomFilledButton extends StatelessWidget {
+  const CustomFilledButton({
     super.key,
     required this.text,
     this.isLoading = false,
@@ -12,6 +12,7 @@ class MyFilledButton extends StatelessWidget {
     this.onLongPress,
     this.style,
     this.filledColor,
+    this.padding,
     this.minimumSize,
   });
   final String text;
@@ -19,6 +20,7 @@ class MyFilledButton extends StatelessWidget {
   final TextStyle? style;
   final Color? filledColor;
   final Size? minimumSize;
+  final EdgeInsetsGeometry? padding;
   final void Function()? onPressed;
   final void Function()? onLongPress;
 
@@ -37,6 +39,7 @@ class MyFilledButton extends StatelessWidget {
           onPressed: onPressed,
           onLongPress: onLongPress,
           style: FilledButton.styleFrom(
+            padding: padding,
             minimumSize: minimumSize ?? const Size(100, 48),
             backgroundColor: filledColor ?? context.theme.primaryColor,
             shape: RoundedRectangleBorder(
