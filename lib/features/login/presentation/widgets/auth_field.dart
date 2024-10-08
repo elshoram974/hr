@@ -15,6 +15,10 @@ class AuthField extends StatelessWidget {
     this.validator,
     this.controller,
     this.autofillHints,
+    this.readOnly = false,
+    this.onFieldSubmitted,
+    this.keyboardType,
+    this.textInputAction = TextInputAction.next,
   });
   final TextEditingController? controller;
   final IconData suffixIconData;
@@ -22,8 +26,12 @@ class AuthField extends StatelessWidget {
   final String label;
   final Widget? suffix;
   final bool obscureText;
+  final bool readOnly;
+  final TextInputType? keyboardType;
+  final TextInputAction textInputAction;
   final Iterable<String>? autofillHints;
   final void Function(String)? onChanged;
+  final void Function(String)? onFieldSubmitted;
   final String? Function(String?)? validator;
 
   @override
@@ -38,9 +46,11 @@ class AuthField extends StatelessWidget {
         ),
         const SizedBox(height: 0.5 * AppConst.defaultPadding),
         MyDefaultField(
+          readOnly: readOnly,
           controller: controller,
           hintText: hintText,
-          keyboardType: TextInputType.emailAddress,
+          keyboardType: keyboardType,
+          textInputAction: textInputAction,
           validator: validator,
           prefix: Icon(
             suffixIconData,
@@ -50,6 +60,7 @@ class AuthField extends StatelessWidget {
           obscureText: obscureText,
           onChanged: onChanged,
           autofillHints: autofillHints,
+          onFieldSubmitted: onFieldSubmitted,
         ),
       ],
     );

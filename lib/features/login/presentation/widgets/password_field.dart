@@ -13,12 +13,18 @@ class PasswordField extends StatefulWidget {
     this.controller,
     this.onChanged,
     this.autofillHints,
+    this.readOnly = false,
+    this.onFieldSubmitted,
+    this.textInputAction = TextInputAction.done,
   });
   final String? otherPass;
   final TextEditingController? controller;
   final String? hintText;
   final String label;
+  final bool readOnly;
+  final TextInputAction textInputAction;
   final Iterable<String>? autofillHints;
+  final void Function(String)? onFieldSubmitted;
   final void Function(String)? onChanged;
 
   @override
@@ -30,8 +36,11 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return AuthField(
+      readOnly: widget.readOnly,
       controller: widget.controller,
       onChanged: widget.onChanged,
+      textInputAction: widget.textInputAction,
+      keyboardType: TextInputType.visiblePassword,
       validator: widget.otherPass != null
           ? (val) => AppValidator.samePassword(val, widget.otherPass!)
           : (val) => AppValidator.auth(val, 8, 100, FieldType.password),
@@ -40,6 +49,7 @@ class _PasswordFieldState extends State<PasswordField> {
       label: widget.label,
       hintText: widget.hintText,
       autofillHints: [AutofillHints.password, ...widget.autofillHints ?? []],
+      onFieldSubmitted: widget.onFieldSubmitted,
       suffix: IconButton(
         onPressed: () => setState(() => obscureText = !obscureText),
         color: Colors.grey,

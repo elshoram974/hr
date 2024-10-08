@@ -64,7 +64,7 @@ class CustomFilledButton extends StatelessWidget {
         return FilledButton(
           onPressed: null,
           style: FilledButton.styleFrom(
-            minimumSize: minimumSize ?? const Size(100, 48),
+            minimumSize: minimumSize ?? const Size(256, 64),
             backgroundColor: filledColor ?? context.theme.primaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(AppConst.borderRadius),

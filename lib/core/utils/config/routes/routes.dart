@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../features/login/presentation/screens/login_screen.dart';
 import '../../../../features/on_boarding/presentation/screens/on_boarding_screen.dart';
+import '../../bindings/login_bindings.dart';
 import '../../middleware/login_middleware.dart';
 import '../../middleware/middleware.dart';
 
@@ -26,6 +27,7 @@ abstract final class AppRoute {
         GetPage(
           name: login,
           page: () => const LoginScreen(),
+          binding: LoginBindings(),
           middlewares: [LoginMiddleWare(Get.find<SharedPreferences>())],
         ),
         GetPage(name: signUp, page: () => const SizedBox()),
