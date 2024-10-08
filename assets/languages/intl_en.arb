@@ -1,4 +1,7 @@
 {
+    "startNow": "Start Now",
+    "welcome": "Welcome",
+    "humanResourcesManagement": "Human resources management",
     "pageNumberMustBiggerThan0": "pageNumber must be bigger than 0",
     "noInternet": "No internet",
     "needsSynchronization": "Needs synchronization",

@@ -4,6 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 import 'app_info.dart';
+import 'core/utils/bindings/initial_bindings.dart';
+import 'core/utils/config/controller/config_controller.dart';
 import 'core/utils/config/locale/generated/l10n.dart';
 import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
@@ -11,6 +13,7 @@ import 'core/utils/config/theme/light_theme.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await InitialBindings().dependencies();
   runApp(
     DevicePreview(
       enabled: AppInfo.isDebugMode,
@@ -35,9 +38,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       useInheritedMediaQuery: AppInfo.isDebugMode,
-      locale: AppInfo.isDebugMode
-          ? DevicePreview.locale(context)
-          : Get.deviceLocale,
+      locale: Get.find<ConfigController>().locale,
       builder: DevicePreview.appBuilder,
       title: 'HR',
       themeMode: ThemeMode.system,
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       getPages: AppRoute.routes,
       initialRoute: AppRoute.onBoarding,
+      // initialBinding: InitialBindings(),
     );
   }
 }

@@ -3,8 +3,8 @@ import 'package:hr/core/utils/extensions/responsive_ex.dart';
 
 import '../../utils/constants/app_constants.dart';
 
-class ResConstrainedBoxAlign extends StatelessWidget {
-  const ResConstrainedBoxAlign({
+class MyResConstrainedBoxAlign extends StatelessWidget {
+  const MyResConstrainedBoxAlign({
     super.key,
     this.maxHeight = double.infinity,
     this.maxWidth,
@@ -39,8 +39,8 @@ class ResConstrainedBoxAlign extends StatelessWidget {
   }
 }
 
-class ResConstrainedBox extends StatelessWidget {
-  const ResConstrainedBox({
+class MyResConstrainedBox extends StatelessWidget {
+  const MyResConstrainedBox({
     super.key,
     this.maxHeight = double.infinity,
     this.maxWidth,

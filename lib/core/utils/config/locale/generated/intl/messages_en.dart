@@ -64,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
         "hidePassword": MessageLookupByLibrary.simpleMessage("Hide password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "humanResourcesManagement":
+            MessageLookupByLibrary.simpleMessage("Human resources management"),
         "ifYouReturnNowYouWillLoseAllData":
             MessageLookupByLibrary.simpleMessage(
                 "If you return now, you will lose all data!"),
@@ -92,11 +94,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "returnBack": MessageLookupByLibrary.simpleMessage("Return back"),
         "showPassword": MessageLookupByLibrary.simpleMessage("Show password"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
         "stayHere": MessageLookupByLibrary.simpleMessage("Stay here"),
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "The supplied auth credential is incorrect, malformed or has expired."),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
         "wrongPasswordProvidedForThatUser":
             MessageLookupByLibrary.simpleMessage(

@@ -50,6 +50,36 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Start Now`
+  String get startNow {
+    return Intl.message(
+      'Start Now',
+      name: 'startNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Human resources management`
+  String get humanResourcesManagement {
+    return Intl.message(
+      'Human resources management',
+      name: 'humanResourcesManagement',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `pageNumber must be bigger than 0`
   String get pageNumberMustBiggerThan0 {
     return Intl.message(
@@ -507,6 +537,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

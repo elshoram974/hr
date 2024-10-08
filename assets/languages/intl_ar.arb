@@ -1,0 +1,92 @@
+{
+    "startNow": "البـــــدء الآن",
+    "welcome": "مرحبـــــاً...",
+    "humanResourcesManagement": "إدارة الموارد البشرية",
+    "pageNumberMustBiggerThan0": "يجب أن يكون رقم الصفحة أكبر من 0",
+    "noInternet": "لا يوجد إنترنت",
+    "needsSynchronization": "يحتاج إلى مزامنة",
+    "createdAt": "تم الإنشاء في {createdDate}",
+    "@createdAt": {
+        "placeholders": {
+            "createdDate": {
+                "type": "String"
+            }
+        }
+    },
+    "lastUpdatedAt": "آخر تحديث في {updatedDate}",
+    "@updatedAt": {
+        "placeholders": {
+            "updatedDate": {
+                "type": "String"
+            }
+        }
+    },
+    "noData": "لا توجد بيانات",
+    "HiPersonChooseWhatUWant": "مرحبًا {personName}، ماذا تريد أن تفعل الآن؟",
+    "@HiPersonChooseWhatUWant": {
+        "placeholders": {
+            "personName": {
+                "type": "String"
+            }
+        }
+    },
+    "unknown": "غير معروف",
+    "pageNotFound": "الصفحة غير موجودة",
+    "returnBack": "العودة",
+    "pageNameNotFoundInRoutes": "الصفحة '{pageName}' غير موجودة في المسارات",
+    "@pageNameNotFoundInRoutes": {
+        "placeholders": {
+            "pageName": {
+                "type": "String"
+            }
+        }
+    },
+    "back": "رجوع",
+    "showPassword": "عرض كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "login": "تسجيل الدخول",
+    "welcomeBack": "مرحبًا بعودتك",
+    "enterYourCredentialsToContinue": "أدخل بيانات اعتمادك للمتابعة.",
+    "emailAddress": "عنوان البريد الإلكتروني",
+    "fillField": "املأ هذا الحقل",
+    "notSamePass": "كلمة المرور غير متطابقة",
+    "enterValidEmail": "أدخل بريدًا إلكترونيًا صالحًا",
+    "cantBeLessThan": "لا يمكن أن يكون أقل من {min}",
+    "@cantBeLessThan": {
+        "placeholders": {
+            "min": {
+                "type": "int"
+            }
+        }
+    },
+    "cantBeMoreThan": "لا يمكن أن يكون أكثر من {max}",
+    "@cantBeMoreThan": {
+        "placeholders": {
+            "max": {
+                "type": "int"
+            }
+        }
+    },
+    "password": "كلمة المرور",
+    "forgetPassword": "نسيت كلمة المرور؟",
+    "recover": "استعادة",
+    "signUp": "التسجيل",
+    "doNotHaveAnAccount": "لا تملك حسابًا؟",
+    "rememberMe": "تذكرني",
+    "createYourOwnEmail": "أنشئ بريدك الإلكتروني الخاص",
+    "name": "الاسم",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء",
+    "goBack": "ارجع",
+    "stayHere": "ابق هنا",
+    "areYouSureYouWantToReturnBack": "هل أنت متأكد أنك تريد العودة؟",
+    "ifYouReturnNowYouWillLoseAllData": "إذا عدت الآن، ستفقد جميع البيانات!",
+    "passwordProvidedIsTooWeak": "كلمة المرور المقدمة ضعيفة جدًا.",
+    "pressAgainToExit": "اضغط مرة أخرى للخروج",
+    "accountAlreadyExistsForThatEmail": "يوجد بالفعل حساب مرتبط بهذا البريد الإلكتروني.",
+    "noUserFoundForThatEmail": "لم يتم العثور على مستخدم مرتبط بهذا البريد الإلكتروني.",
+    "wrongPasswordProvidedForThatUser": "كلمة المرور المقدمة لهذا المستخدم خاطئة.",
+    "theSuppliedAuthCredentialIsIncorrect": "بيانات اعتماد المصادقة المقدمة غير صحيحة أو مشوهة أو منتهية الصلاحية.",
+    "home": "الرئيسية"
+}
