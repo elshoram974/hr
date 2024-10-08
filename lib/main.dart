@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       getPages: AppRoute.routes,
-      initialRoute: AppRoute.login,
+      initialRoute: AppRoute.onBoarding,
     );
   }
 }
