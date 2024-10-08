@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../utils/constants/app_color.dart';
 import '../../utils/constants/app_constants.dart';
-import '../../utils/styles.dart';
 
 class ChooseDialogListTile<T> extends StatelessWidget {
   const ChooseDialogListTile({
@@ -27,7 +26,7 @@ class ChooseDialogListTile<T> extends StatelessWidget {
       leading: Radio<T>(
         fillColor: WidgetStateProperty.resolveWith(
           (s) => s.contains(WidgetState.selected)
-              ? AppColor.primary
+              ? context.theme.primaryColor
               : Colors.white,
         ),
         value: value,
@@ -35,7 +34,7 @@ class ChooseDialogListTile<T> extends StatelessWidget {
         onChanged: onTap == null ? null : (e) => onTap!(),
       ),
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-      title: Text(title, style: AppStyle.styleBoldRegular16),
+      title: Text(title, style: context.textTheme.titleMedium),
       trailing: trailing,
       onTap: onTap,
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../utils/constants/app_constants.dart';
-import '../../utils/styles.dart';
 import 'dialog_body/dialog_body.dart';
 
 class CustomDialog extends StatelessWidget {
@@ -42,7 +42,7 @@ class CustomDialog extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: AppStyle.styleBoldRegular24,
+              style: context.textTheme.titleLarge,
             ),
             DialogBody(
               crossAxisAlignment: crossAxisAlignment,

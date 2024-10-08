@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart' as intl;
 
 import '../utils/constants/app_constants.dart';
-import '../utils/styles.dart';
 
 class MyDefaultField extends StatefulWidget {
   final GlobalKey<FormFieldState>? fieldKey;
@@ -101,7 +101,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           borderRadius: BorderRadius.circular(AppConst.borderRadius),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: AppStyle.styleRegular15.color!),
+          borderSide: BorderSide(color: context.textTheme.headlineLarge!.color!),
           borderRadius: BorderRadius.circular(AppConst.borderRadius),
         ),
         constraints: const BoxConstraints(maxWidth: AppConst.constraint),

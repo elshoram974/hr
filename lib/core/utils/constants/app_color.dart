@@ -1,35 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 abstract final class AppColor {
   const AppColor();
-  static Color error = Colors.redAccent.shade100;
+  // static Color error = Colors.redAccent.shade100;
 
-  static const int _primaryInt = 0xFFF5576C;
-  static const Color primary = Color(_primaryInt);
+  static const Color primaryLight = Color(0xFFF5576C);
+  static const Color primaryDark = Color(0xFFF5576C);
 
-  static const int _secondaryInt = 0xFFD9D9D9;
-  static const Color secondary = Color(_secondaryInt);
+  static const Color secondaryLight = Color(0xFFD9D9D9);
+  static const Color secondaryDark = Color(0xFFD9D9D9);
 
-  static const int _grayInt = 0xFF949494;
-  static const Color gray = Color(_grayInt);
-  static const Color grayLight = Color(0xffc8c8c8);
+  // static const Color active = Color(0xFFE87282);
 
-  static const int _activeInt = 0xFFE87282;
-  static const Color active = Color(_activeInt);
+  // static const Color _selectedLight = secondary;
+  // static const Color _selectedDark = Color(0xFF616161);
 
-  static const Color _selectedLight = secondary;
-  static const Color _selectedDark = Color(0xFF616161);
+  // static Color selected(BuildContext context) =>
+  //     context.isDarkMode ? _selectedDark : _selectedLight;
+  // static Color grayLightDark(BuildContext context) =>
+  //     context.isDarkMode ? gray : grayLight;
 
-  static Color selected(BuildContext context) =>
-      context.isDarkMode ? _selectedDark : _selectedLight;
-  static Color grayLightDark(BuildContext context) =>
-      context.isDarkMode ? gray : grayLight;
-
-  static const Color _backgroundLight = Color(0xFFFFFFFF);
-  static const Color backgroundDark = Color(0xFF373737);
-  static Color background(BuildContext context) =>
-      context.isDarkMode ? backgroundDark : _backgroundLight;
+  // static const Color _backgroundLight = Color(0xFFFFFFFF);
+  // static const Color backgroundDark = Color(0xFF373737);
+  // static Color background(BuildContext context) =>
+  //     context.isDarkMode ? backgroundDark : _backgroundLight;
 
   // static const int _activeLightInt = 0xFFFF0022;
   // static const Color activeLight = Color(_activeLightInt);
