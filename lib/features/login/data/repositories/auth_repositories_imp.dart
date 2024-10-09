@@ -1,4 +1,5 @@
 import 'package:hr/core/status/status.dart';
+import 'package:hr/core/utils/functions/execute_and_handle_remote_errors.dart';
 
 import '../../domain/entities/user_entity.dart';
 import '../../domain/repositories/auth_repositories.dart';
@@ -18,6 +19,16 @@ class AuthRepositoriesImp extends AuthRepositories {
     required String email,
     required String password,
   }) {
-    throw UnimplementedError();
+    return executeAndHandleErrors<UserEntity>(
+      () async {
+        final UserEntity user = await remoteDataSource.login(
+          email: email,
+          password: password,
+        );
+        // TODO:* save token
+        await localDataSource.saveUser(user);
+        return user;
+      },
+    );
   }
 }

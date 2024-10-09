@@ -3,9 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:hr/core/status/errors/failure.dart';
+import 'package:hr/core/status/status.dart';
+import 'package:hr/core/status/success/success.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
+import 'package:hr/core/utils/config/routes/routes.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 
+import '../../domain/entities/user_entity.dart';
 import '../../domain/repositories/auth_repositories.dart';
 
 abstract class LoginController extends GetxController {
@@ -22,7 +27,7 @@ abstract class LoginController extends GetxController {
 class LoginControllerImp extends LoginController {
   LoginControllerImp(this.repo);
   final AuthRepositories repo;
-  
+
   bool _isLoading = false;
 
   @override
@@ -31,12 +36,23 @@ class LoginControllerImp extends LoginController {
   @override
   Future<void> login() async {
     if (!formKey.currentState!.validate()) return;
-    _isLoading = true;
-    update();
     print("email :${email.trim()}");
     print("password :${password.trim()}");
-    await Future.delayed(const Duration(seconds: 3));
-    TextInput.finishAutofillContext();
+    _isLoading = true;
+    update();
+    final Status<UserEntity> loginState = await repo.login(
+      email: email,
+      password: password,
+    );
+    if (loginState is Success<UserEntity>) {
+      TextInput.finishAutofillContext();
+      Get.offAllNamed(AppRoute.home);
+    } else if (loginState is Failure<UserEntity>) {
+      ShowMySnackBar.showMySnackBar(
+        loginState.failure.message,
+      );
+    }
+
     _isLoading = false;
     update();
   }

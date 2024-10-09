@@ -1,3 +1,4 @@
+// import 'package:hr/core/utils/constants/app_links.dart';
 import 'package:hr/core/utils/services/api_services.dart';
 
 import '../../domain/entities/user_entity.dart';
@@ -18,8 +19,16 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
   Future<UserEntity> login({
     required String email,
     required String password,
-  }) {
-    // TODO: implement login
-    throw UnimplementedError();
+  }) async {
+    // final Map<String, dynamic> res = await apiServices.post(
+    //   AppLinks.login,
+    //   {
+    //     "email": email,
+    //     "password": password,
+    //   },
+    // );
+    // return UserEntity.fromMap(res);
+
+    return UserEntity(name: "Mohammed", email: email, image: null);
   }
 }
