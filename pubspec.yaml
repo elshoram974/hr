@@ -31,9 +31,17 @@ dependencies:
   get: ^4.6.6
 
   # * for internet
-  connectivity_plus: ^6.0.5
-  equatable: ^2.0.5
   dio: ^5.7.0
+  connectivity_plus: ^6.0.5
+
+  # * for make == operator
+  equatable: ^2.0.5
+
+  # * for get the place
+  geolocator: ^13.0.1
+
+  # * check if user open location or not
+  permission_handler: ^11.3.1
 
 dev_dependencies:
   flutter_test:
