@@ -16,7 +16,7 @@ import 'core/utils/constants/app_strings.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox<Map>(AppString.kUserBox);
+  await Hive.openBox<Map<String, dynamic>>(AppString.kUserBox);
   await InitialBindings().dependencies();
   runApp(
     DevicePreview(

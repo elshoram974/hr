@@ -5,5 +5,8 @@ import '../entities/user_entity.dart';
 abstract class AuthRepositories {
   const AuthRepositories();
 
-  Future<Status<UserEntity>> login({String email, String password});
+  Future<Status<UserEntity>> login({
+    required String email,
+    required String password,
+  });
 }

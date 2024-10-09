@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 
+import '../../domain/repositories/auth_repositories.dart';
+
 abstract class LoginController extends GetxController {
   bool get isLoading;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -18,6 +20,9 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
+  LoginControllerImp(this.repo);
+  final AuthRepositories repo;
+  
   bool _isLoading = false;
 
   @override
