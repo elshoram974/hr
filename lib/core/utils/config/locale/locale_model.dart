@@ -11,5 +11,5 @@ class LocaleModel {
     required this.countryCode,
   });
 
-  Locale get locale=> Locale(languageCode);
+  Locale get locale => Locale(languageCode);
 }

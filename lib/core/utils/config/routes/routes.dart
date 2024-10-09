@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../features/login/presentation/screens/login_screen.dart';
 import '../../../../features/on_boarding/presentation/screens/on_boarding_screen.dart';
 import '../../bindings/login_bindings.dart';
+import '../../helpers/hive_helper.dart';
 import '../../middleware/login_middleware.dart';
 import '../../middleware/middleware.dart';
 
@@ -22,13 +23,18 @@ abstract final class AppRoute {
         GetPage(
           name: onBoarding,
           page: () => const OnBoardingScreen(),
-          middlewares: [InitMiddleWare(Get.find<SharedPreferences>())],
+          middlewares: [
+            InitMiddleWare(
+              prefs: Get.find<SharedPreferences>(),
+              hive: Get.find<HiveHelper>(),
+            ),
+          ],
         ),
         GetPage(
           name: login,
           page: () => const LoginScreen(),
           binding: LoginBindings(),
-          middlewares: [LoginMiddleWare(Get.find<SharedPreferences>())],
+          middlewares: [LoginMiddleWare(Get.find<HiveHelper>())],
         ),
         GetPage(name: signUp, page: () => const SizedBox()),
         GetPage(name: home, page: () => const SizedBox()),
