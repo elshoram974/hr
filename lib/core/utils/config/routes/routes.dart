@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../../features/login/data/datasources/auth_local_data_source.dart';
 import '../../../../features/login/presentation/screens/login_screen.dart';
 import '../../../../features/on_boarding/presentation/screens/on_boarding_screen.dart';
 import '../../bindings/login_bindings.dart';
-import '../../helpers/hive_helper.dart';
 import '../../middleware/login_middleware.dart';
 import '../../middleware/middleware.dart';
 
@@ -26,7 +26,7 @@ abstract final class AppRoute {
           middlewares: [
             InitMiddleWare(
               prefs: Get.find<SharedPreferences>(),
-              hive: Get.find<HiveHelper>(),
+              authLocal: Get.find<AuthLocalDataSource>(),
             ),
           ],
         ),
@@ -34,7 +34,7 @@ abstract final class AppRoute {
           name: login,
           page: () => const LoginScreen(),
           binding: LoginBindings(),
-          middlewares: [LoginMiddleWare(Get.find<HiveHelper>())],
+          middlewares: [LoginMiddleWare(Get.find<AuthLocalDataSource>())],
         ),
         GetPage(name: signUp, page: () => const SizedBox()),
         GetPage(name: home, page: () => const SizedBox()),

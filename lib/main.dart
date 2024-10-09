@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'app_info.dart';
 import 'core/utils/bindings/initial_bindings.dart';
@@ -10,11 +11,12 @@ import 'core/utils/config/locale/generated/l10n.dart';
 import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
-import 'core/utils/helpers/hive_helper.dart';
+import 'core/utils/constants/app_strings.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await HiveHelper.initHive();
+  await Hive.initFlutter();
+  await Hive.openBox<Map>(AppString.kUserBox);
   await InitialBindings().dependencies();
   runApp(
     DevicePreview(
