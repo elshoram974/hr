@@ -4,4 +4,5 @@ abstract final class AppAssets {
   // * images
   static const String _imagesPath = "assets/images";
   static const String hrIntro = "$_imagesPath/hr_intro.png";
+  static const String personPlaceholder = "$_imagesPath/person_placeholder.png";
 }

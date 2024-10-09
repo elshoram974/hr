@@ -26,6 +26,7 @@ dependencies:
   hive_flutter: ^1.1.0
   shared_preferences: ^2.3.2
   flutter_secure_storage: ^9.2.2
+  cached_network_image: ^3.4.1
 
   # * state management
   get: ^4.6.6
