@@ -1,26 +1,32 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
+import '../../domain/entities/user_entity.dart';
+
 abstract class AuthLocalDataSource {
   const AuthLocalDataSource();
-  Future<int> saveUser(Map user);
-  Map? getCurrentUser();
+  Future<int> saveUser(UserEntity user);
+  UserEntity? getCurrentUser();
   Future<void> logOut();
 }
 
 class AuthLocalDataSourceImp extends AuthLocalDataSource {
   const AuthLocalDataSourceImp(this.userBox);
-  final Box<Map> userBox;
+  final Box<Map<String, dynamic>> userBox;
 
   @override
-  Future<int> saveUser(Map user) => userBox.add(user);
-
-  @override
-  Map? getCurrentUser() {
-    return userBox.values.lastOrNull;
-  }
-
-  @override
-  Future<void> logOut() async {
+  Future<int> saveUser(UserEntity user) async{
     await userBox.clear();
+    return userBox.add(user.toMap());
   }
+
+  @override
+  UserEntity? getCurrentUser() {
+    final Map<String, dynamic>? map = userBox.values.lastOrNull;
+    if (map == null) return null;
+    return UserEntity.fromMap(map);
+  }
+
+  @override
+  Future<void> logOut() => userBox.clear();
+  
 }

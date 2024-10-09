@@ -14,7 +14,9 @@ class InitialBindings extends Bindings {
       ConfigControllerImp(Get.find<SharedPreferences>()),
     );
     Get.put<AuthLocalDataSource>(
-      AuthLocalDataSourceImp(Hive.box<Map>(AppString.kUserBox)),
+      AuthLocalDataSourceImp(
+        Hive.box<Map<String, dynamic>>(AppString.kUserBox),
+      ),
     );
   }
 }

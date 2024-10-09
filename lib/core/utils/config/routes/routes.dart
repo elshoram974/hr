@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../../features/home/presentation/screens/home_screen.dart';
 import '../../../../features/login/data/datasources/auth_local_data_source.dart';
 import '../../../../features/login/presentation/screens/login_screen.dart';
 import '../../../../features/on_boarding/presentation/screens/on_boarding_screen.dart';
@@ -16,7 +16,6 @@ abstract final class AppRoute {
 
   static const String onBoarding = "/on-boarding";
   static const String login = "/login";
-  static const String signUp = "/sign-up";
   static const String home = "/home";
 
   static List<GetPage> get pages => [
@@ -36,7 +35,6 @@ abstract final class AppRoute {
           binding: LoginBindings(),
           middlewares: [LoginMiddleWare(Get.find<AuthLocalDataSource>())],
         ),
-        GetPage(name: signUp, page: () => const SizedBox()),
-        GetPage(name: home, page: () => const SizedBox()),
+        GetPage(name: home, page: () => const HomeScreen()),
       ];
 }
