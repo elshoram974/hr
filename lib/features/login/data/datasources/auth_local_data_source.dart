@@ -11,7 +11,7 @@ abstract class AuthLocalDataSource {
 
 class AuthLocalDataSourceImp extends AuthLocalDataSource {
   const AuthLocalDataSourceImp(this.userBox);
-  final Box<Map<String, dynamic>> userBox;
+  final Box<Map> userBox;
 
   @override
   Future<int> saveUser(UserEntity user) async{
@@ -21,7 +21,7 @@ class AuthLocalDataSourceImp extends AuthLocalDataSource {
 
   @override
   UserEntity? getCurrentUser() {
-    final Map<String, dynamic>? map = userBox.values.lastOrNull;
+    final Map? map = userBox.values.lastOrNull;
     if (map == null) return null;
     return UserEntity.fromMap(map);
   }

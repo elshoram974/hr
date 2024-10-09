@@ -19,7 +19,7 @@ class InitialBindings extends Bindings {
     );
     Get.put<AuthLocalDataSource>(
       AuthLocalDataSourceImp(
-        Hive.box<Map<String, dynamic>>(AppString.kUserBox),
+        await Hive.openBox<Map>(AppString.kUserBox),
       ),
     );
   }

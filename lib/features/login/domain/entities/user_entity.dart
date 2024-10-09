@@ -9,11 +9,11 @@ class UserEntity {
     required this.image,
   });
 
-  factory UserEntity.fromMap(Map<String, dynamic> map) {
+  factory UserEntity.fromMap(Map map) {
     return UserEntity(
-      name: map['name'],
-      email: map['email'],
-      image: map['image'],
+      name: map['name'] as String,
+      email: map['email'] as String,
+      image: map['image'] as String?,
     );
   }
 

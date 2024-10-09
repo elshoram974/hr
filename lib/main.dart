@@ -11,12 +11,10 @@ import 'core/utils/config/locale/generated/l10n.dart';
 import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
-import 'core/utils/constants/app_strings.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox<Map<String, dynamic>>(AppString.kUserBox);
   await InitialBindings().dependencies();
   runApp(
     DevicePreview(
