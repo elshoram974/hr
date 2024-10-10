@@ -48,7 +48,7 @@ class LoginControllerImp extends LoginController {
       TextInput.finishAutofillContext();
       Get.offAllNamed(AppRoute.home);
     } else if (loginState is Failure<UserEntity>) {
-      ShowMySnackBar.showMySnackBar(
+      ShowMySnackBar.call(
         loginState.failure.message,
       );
     }
@@ -64,7 +64,7 @@ class LoginControllerImp extends LoginController {
       if (DateTime.now().difference(_back) < const Duration(seconds: 2)) {
         exit(0);
       }
-      ShowMySnackBar.showMySnackBar(
+      ShowMySnackBar.call(
         S.current.pressAgainToExit,
         duration: const Duration(seconds: 2),
       );

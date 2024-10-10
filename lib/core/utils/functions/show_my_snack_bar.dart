@@ -6,8 +6,7 @@ import '../constants/app_constants.dart';
 abstract final class ShowMySnackBar {
   const ShowMySnackBar();
 
-  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
-      showMySnackBar(
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason> call(
     String content, {
     Duration? duration,
     TextStyle? style,

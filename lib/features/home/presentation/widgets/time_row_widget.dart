@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 
+import '../controller/home_controller.dart';
 import 'time_card.dart';
 
 class TimeRowWidget extends StatelessWidget {
@@ -15,17 +17,22 @@ class TimeRowWidget extends StatelessWidget {
       children: [
         Expanded(
           flex: 5,
-          child: TimeCard(
-            title: S.of(context).timeOfEntry,
-            time: DateTime.now(),
-          ),
+          child: GetBuilder<HomeController>(builder: (controller) {
+            return TimeCard(
+              title: S.of(context).timeOfEntry,
+              time: controller.startDate,
+            );
+          }),
         ),
         const Spacer(),
         Expanded(
           flex: 5,
-          child: TimeCard(
-            title: S.of(context).timeOfExit,
-          ),
+          child: GetBuilder<HomeController>(builder: (controller) {
+            return TimeCard(
+              title: S.of(context).timeOfExit,
+              time: controller.endDate,
+            );
+          }),
         ),
       ],
     );
