@@ -50,6 +50,36 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Good bye...`
+  String get goodbye {
+    return Intl.message(
+      'Good bye...',
+      name: 'goodbye',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `successfully`
+  String get successfully {
+    return Intl.message(
+      'successfully',
+      name: 'successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logOut {
+    return Intl.message(
+      'Log out',
+      name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `out`
   String get outText {
     return Intl.message(
@@ -80,13 +110,13 @@ class S {
     );
   }
 
-  /// `Log {inOut} successful`
-  String logInOutSuccessful(String inOut) {
+  /// `Logged`
+  String get logged {
     return Intl.message(
-      'Log $inOut successful',
-      name: 'logInOutSuccessful',
+      'Logged',
+      name: 'logged',
       desc: '',
-      args: [inOut],
+      args: [],
     );
   }
 
@@ -110,11 +140,31 @@ class S {
     );
   }
 
+  /// `Please click here to log out`
+  String get pleaseClickHereToLogOut {
+    return Intl.message(
+      'Please click here to log out',
+      name: 'pleaseClickHereToLogOut',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Clock in to begin the shift`
   String get clockInToBeginTheShift {
     return Intl.message(
       'Clock in to begin the shift',
       name: 'clockInToBeginTheShift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clock in to end the shift`
+  String get clockInToEndTheShift {
+    return Intl.message(
+      'Clock in to end the shift',
+      name: 'clockInToEndTheShift',
       desc: '',
       args: [],
     );

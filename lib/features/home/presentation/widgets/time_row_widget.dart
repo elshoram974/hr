@@ -17,22 +17,30 @@ class TimeRowWidget extends StatelessWidget {
       children: [
         Expanded(
           flex: 5,
-          child: GetBuilder<HomeController>(builder: (controller) {
-            return TimeCard(
-              title: S.of(context).timeOfEntry,
-              time: controller.startDate,
-            );
-          }),
+          child: GetBuilder<HomeController>(
+            builder: (controller) {
+              return TimeCard(
+                title: S.of(context).timeOfEntry,
+                time: controller.startDate,
+                // isLoading: controller.isStartTimeLoading,
+                isEnded: controller.endDate != null,
+              );
+            },
+          ),
         ),
         const Spacer(),
         Expanded(
           flex: 5,
-          child: GetBuilder<HomeController>(builder: (controller) {
-            return TimeCard(
-              title: S.of(context).timeOfExit,
-              time: controller.endDate,
-            );
-          }),
+          child: GetBuilder<HomeController>(
+            builder: (controller) {
+              return TimeCard(
+                title: S.of(context).timeOfExit,
+                time: controller.endDate,
+                // isLoading: controller.isEndTimeLoading,
+                isEnded: controller.endDate != null,
+              );
+            },
+          ),
         ),
       ],
     );

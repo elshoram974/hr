@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
               SliverToBoxAdapter(
                 child: CircularImageWidget(
                   imageUrl: controller.user.image,
-                  radius: imageSize(context),
+                  radius: 0.4 * MediaQuery.sizeOf(context).shortestSide,
                 ),
               ),
               TextSliverWidget(text: S.of(context).goodMorning),

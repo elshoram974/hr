@@ -1,18 +1,16 @@
 {
-    "outText":"out",
-    "inText":"in",
+    "goodbye": "Good bye...",
+    "successfully": "successfully",
+    "logOut": "Log out",
+    "outText": "out",
+    "inText": "in",
     "done": "Done",
-    "logInOutSuccessful": "Log {inOut} successful",
-    "@logInOutSuccessful": {
-        "placeholders": {
-            "inOut": {
-                "type": "String"
-            }
-        }
-    },
+    "logged": "Logged",
     "timeMustBeMoreThan60Minutes": "Time must be more than 60 minutes",
     "pleaseClickHereToLogin": "Please click here to log in",
+    "pleaseClickHereToLogOut": "Please click here to log out",
     "clockInToBeginTheShift": "Clock in to begin the shift",
+    "clockInToEndTheShift": "Clock in to end the shift",
     "timeOfEntry": "Time of entry",
     "timeOfExit": "Time of exit",
     "goodMorning": "Good morning",

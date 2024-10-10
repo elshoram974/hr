@@ -33,9 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m5(updatedDate) => "آخر تحديث في ${updatedDate}";
 
-  static String m6(inOut) => "تسجيل ${inOut} بنجاح";
-
-  static String m7(pageName) => "الصفحة \'${pageName}\' غير موجودة في المسارات";
+  static String m6(pageName) => "الصفحة \'${pageName}\' غير موجودة في المسارات";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -51,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cantBeMoreThan": m2,
         "clockInToBeginTheShift":
             MessageLookupByLibrary.simpleMessage("ابصـم لبدايـة الدوام"),
+        "clockInToEndTheShift":
+            MessageLookupByLibrary.simpleMessage("ابصـم لنهاية الدوام"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -75,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "goBack": MessageLookupByLibrary.simpleMessage("ارجع"),
         "goodMorning": MessageLookupByLibrary.simpleMessage("صبـــاح الخيـر"),
+        "goodbye": MessageLookupByLibrary.simpleMessage("إلى اللقــاء..."),
         "helloUserName": m4,
         "hidePassword":
             MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
@@ -86,7 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "إذا عدت الآن، ستفقد جميع البيانات!"),
         "inText": MessageLookupByLibrary.simpleMessage("الدخول"),
         "lastUpdatedAt": m5,
-        "logInOutSuccessful": m6,
+        "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "logged": MessageLookupByLibrary.simpleMessage("تم تسجيل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginToContinue":
             MessageLookupByLibrary.simpleMessage("للاستمرار يرجى تسجيل الدخول"),
@@ -100,7 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "notSamePass":
             MessageLookupByLibrary.simpleMessage("كلمة المرور غير متطابقة"),
         "outText": MessageLookupByLibrary.simpleMessage("الخروج"),
-        "pageNameNotFoundInRoutes": m7,
+        "pageNameNotFoundInRoutes": m6,
         "pageNotFound":
             MessageLookupByLibrary.simpleMessage("الصفحة غير موجودة"),
         "pageNumberMustBiggerThan0": MessageLookupByLibrary.simpleMessage(
@@ -108,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
             "كلمة المرور المقدمة ضعيفة جدًا."),
+        "pleaseClickHereToLogOut": MessageLookupByLibrary.simpleMessage(
+            "الرجاء الضغط هنا لتسجيل الخــروج"),
         "pleaseClickHereToLogin": MessageLookupByLibrary.simpleMessage(
             "الرجاء الضغط هنا لتسجيل الدخــول"),
         "pressAgainToExit":
@@ -119,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUp": MessageLookupByLibrary.simpleMessage("التسجيل"),
         "startNow": MessageLookupByLibrary.simpleMessage("البـــــدء الآن"),
         "stayHere": MessageLookupByLibrary.simpleMessage("ابق هنا"),
+        "successfully": MessageLookupByLibrary.simpleMessage("بنجاح"),
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "بيانات اعتماد المصادقة المقدمة غير صحيحة أو مشوهة أو منتهية الصلاحية."),
@@ -127,7 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "timeOfEntry": MessageLookupByLibrary.simpleMessage("وقت الدخــول"),
         "timeOfExit": MessageLookupByLibrary.simpleMessage("وقت الخروج"),
         "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
-        "welcome": MessageLookupByLibrary.simpleMessage("مرحبـــــاً..."),
+        "welcome": MessageLookupByLibrary.simpleMessage("أهلاً بـك..."),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك"),
         "wrongPasswordProvidedForThatUser":
             MessageLookupByLibrary.simpleMessage(

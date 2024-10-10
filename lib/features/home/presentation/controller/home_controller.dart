@@ -13,6 +13,14 @@ abstract class HomeController extends GetxController {
   DateTime? startDate;
   DateTime? endDate;
 
+  // bool isStartTimeLoading = false;
+  // bool isEndTimeLoading = false;
+
+  bool showStatusCard = false;
+
+  bool isDayEnded = false;
+
+  void closeStatusDialog([bool isDayEnded = false]);
   void recordTime();
 
   void onPopInvoked();
@@ -22,21 +30,38 @@ class HomeControllerImp extends HomeController {
   HomeControllerImp(super.user);
 
   @override
+  void closeStatusDialog([bool isDayEnded = false]){
+    showStatusCard = false;
+    this.isDayEnded = isDayEnded;
+    update();
+  }
+
+  @override
   void recordTime() {
+    if (endDate != null) return;
     if (startDate == null) {
+      // isStartTimeLoading = true;
+      // update();
       startDate = DateTime.now();
     } else {
       final DateTime tempDate = DateTime.now();
       int duration = tempDate.difference(startDate!).inMinutes;
-      if (duration < 60) {
+      if (duration > 60) {
         ShowMySnackBar.call(
           S.current.timeMustBeMoreThan60Minutes,
           backgroundColor: Get.theme.colorScheme.error,
         );
         return;
       }
+      // isEndTimeLoading = true;
+      // update();
+
       endDate = tempDate;
     }
+
+    // isEndTimeLoading = false;
+    // isStartTimeLoading = false;
+    showStatusCard = true;
     update();
   }
 

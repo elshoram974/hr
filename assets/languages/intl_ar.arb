@@ -1,18 +1,16 @@
 {
+    "goodbye": "إلى اللقــاء...",
+    "successfully": "بنجاح",
+    "logOut": "تسجيل الخروج",
     "outText": "الخروج",
     "inText": "الدخول",
     "done": "تــم",
-    "logInOutSuccessful": "تسجيل {inOut} بنجاح",
-    "@logInOutSuccessful": {
-        "placeholders": {
-            "inOut": {
-                "type": "String"
-            }
-        }
-    },
+    "logged": "تم تسجيل",
     "timeMustBeMoreThan60Minutes": "يجب أن يكون الوقت اكثر من ٦٠ دقيقة",
     "pleaseClickHereToLogin": "الرجاء الضغط هنا لتسجيل الدخــول",
+    "pleaseClickHereToLogOut": "الرجاء الضغط هنا لتسجيل الخــروج",
     "clockInToBeginTheShift": "ابصـم لبدايـة الدوام",
+    "clockInToEndTheShift": "ابصـم لنهاية الدوام",
     "timeOfExit": "وقت الخروج",
     "timeOfEntry": "وقت الدخــول",
     "goodMorning": "صبـــاح الخيـر",
@@ -26,7 +24,7 @@
     },
     "loginToContinue": "للاستمرار يرجى تسجيل الدخول",
     "startNow": "البـــــدء الآن",
-    "welcome": "مرحبـــــاً...",
+    "welcome": "أهلاً بـك...",
     "humanResourcesManagement": "إدارة الموارد البشرية",
     "pageNumberMustBiggerThan0": "يجب أن يكون رقم الصفحة أكبر من 0",
     "noInternet": "لا يوجد إنترنت",

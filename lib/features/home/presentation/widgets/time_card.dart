@@ -9,17 +9,23 @@ class TimeCard extends StatelessWidget {
     required this.title,
     this.time,
     this.isLoading = false,
+    this.isEnded = false,
   });
   final String title;
   final DateTime? time;
   final bool isLoading;
+  final bool isEnded;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(0.5 * AppConst.defaultPadding),
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: isEnded
+            ? Colors.black87
+            : time != null
+                ? Colors.green
+                : Colors.grey,
         borderRadius: BorderRadius.circular(AppConst.borderRadius),
       ),
       child: Column(

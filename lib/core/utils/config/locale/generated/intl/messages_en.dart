@@ -33,9 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m5(updatedDate) => "Last update at ${updatedDate}";
 
-  static String m6(inOut) => "Log ${inOut} successful";
-
-  static String m7(pageName) => "Page \'${pageName}\' not found in routes";
+  static String m6(pageName) => "Page \'${pageName}\' not found in routes";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -51,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cantBeMoreThan": m2,
         "clockInToBeginTheShift":
             MessageLookupByLibrary.simpleMessage("Clock in to begin the shift"),
+        "clockInToEndTheShift":
+            MessageLookupByLibrary.simpleMessage("Clock in to end the shift"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -74,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forget password ? "),
         "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
         "goodMorning": MessageLookupByLibrary.simpleMessage("Good morning"),
+        "goodbye": MessageLookupByLibrary.simpleMessage("Good bye..."),
         "helloUserName": m4,
         "hidePassword": MessageLookupByLibrary.simpleMessage("Hide password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -84,7 +85,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "If you return now, you will lose all data!"),
         "inText": MessageLookupByLibrary.simpleMessage("in"),
         "lastUpdatedAt": m5,
-        "logInOutSuccessful": m6,
+        "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
+        "logged": MessageLookupByLibrary.simpleMessage("Logged"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginToContinue":
             MessageLookupByLibrary.simpleMessage("Please log in to continue"),
@@ -98,13 +100,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "notSamePass":
             MessageLookupByLibrary.simpleMessage("Not same password"),
         "outText": MessageLookupByLibrary.simpleMessage("out"),
-        "pageNameNotFoundInRoutes": m7,
+        "pageNameNotFoundInRoutes": m6,
         "pageNotFound": MessageLookupByLibrary.simpleMessage("Page not found"),
         "pageNumberMustBiggerThan0": MessageLookupByLibrary.simpleMessage(
             "pageNumber must be bigger than 0"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
             "The password provided is too weak."),
+        "pleaseClickHereToLogOut": MessageLookupByLibrary.simpleMessage(
+            "Please click here to log out"),
         "pleaseClickHereToLogin":
             MessageLookupByLibrary.simpleMessage("Please click here to log in"),
         "pressAgainToExit":
@@ -116,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
         "stayHere": MessageLookupByLibrary.simpleMessage("Stay here"),
+        "successfully": MessageLookupByLibrary.simpleMessage("successfully"),
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "The supplied auth credential is incorrect, malformed or has expired."),
