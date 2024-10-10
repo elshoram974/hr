@@ -1,4 +1,16 @@
 {
+    "outText":"out",
+    "inText":"in",
+    "done": "Done",
+    "logInOutSuccessful": "Log {inOut} successful",
+    "@logInOutSuccessful": {
+        "placeholders": {
+            "inOut": {
+                "type": "String"
+            }
+        }
+    },
+    "timeMustBeMoreThan60Minutes": "Time must be more than 60 minutes",
     "pleaseClickHereToLogin": "Please click here to log in",
     "clockInToBeginTheShift": "Clock in to begin the shift",
     "timeOfEntry": "Time of entry",
@@ -14,7 +26,7 @@
     },
     "loginToContinue": "Please log in to continue",
     "startNow": "Start Now",
-    "welcome": "Welcome",
+    "welcome": "Welcome...",
     "humanResourcesManagement": "Human resources management",
     "pageNumberMustBiggerThan0": "pageNumber must be bigger than 0",
     "noInternet": "No internet",

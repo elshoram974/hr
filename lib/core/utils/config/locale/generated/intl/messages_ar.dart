@@ -33,7 +33,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m5(updatedDate) => "آخر تحديث في ${updatedDate}";
 
-  static String m6(pageName) => "الصفحة \'${pageName}\' غير موجودة في المسارات";
+  static String m6(inOut) => "تسجيل ${inOut} بنجاح";
+
+  static String m7(pageName) => "الصفحة \'${pageName}\' غير موجودة في المسارات";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -57,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createdAt": m3,
         "doNotHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("لا تملك حسابًا؟"),
+        "done": MessageLookupByLibrary.simpleMessage("تــم"),
         "emailAddress":
             MessageLookupByLibrary.simpleMessage("عنوان البريد الإلكتروني"),
         "enterEmailAddress": MessageLookupByLibrary.simpleMessage(
@@ -81,7 +84,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ifYouReturnNowYouWillLoseAllData":
             MessageLookupByLibrary.simpleMessage(
                 "إذا عدت الآن، ستفقد جميع البيانات!"),
+        "inText": MessageLookupByLibrary.simpleMessage("الدخول"),
         "lastUpdatedAt": m5,
+        "logInOutSuccessful": m6,
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginToContinue":
             MessageLookupByLibrary.simpleMessage("للاستمرار يرجى تسجيل الدخول"),
@@ -94,7 +99,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "لم يتم العثور على مستخدم مرتبط بهذا البريد الإلكتروني."),
         "notSamePass":
             MessageLookupByLibrary.simpleMessage("كلمة المرور غير متطابقة"),
-        "pageNameNotFoundInRoutes": m6,
+        "outText": MessageLookupByLibrary.simpleMessage("الخروج"),
+        "pageNameNotFoundInRoutes": m7,
         "pageNotFound":
             MessageLookupByLibrary.simpleMessage("الصفحة غير موجودة"),
         "pageNumberMustBiggerThan0": MessageLookupByLibrary.simpleMessage(
@@ -116,6 +122,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "بيانات اعتماد المصادقة المقدمة غير صحيحة أو مشوهة أو منتهية الصلاحية."),
+        "timeMustBeMoreThan60Minutes": MessageLookupByLibrary.simpleMessage(
+            "يجب أن يكون الوقت اكثر من ٦٠ دقيقة"),
+        "timeOfEntry": MessageLookupByLibrary.simpleMessage("وقت الدخــول"),
         "timeOfExit": MessageLookupByLibrary.simpleMessage("وقت الخروج"),
         "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبـــــاً..."),

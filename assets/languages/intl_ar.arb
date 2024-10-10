@@ -1,7 +1,20 @@
 {
+    "outText": "الخروج",
+    "inText": "الدخول",
+    "done": "تــم",
+    "logInOutSuccessful": "تسجيل {inOut} بنجاح",
+    "@logInOutSuccessful": {
+        "placeholders": {
+            "inOut": {
+                "type": "String"
+            }
+        }
+    },
+    "timeMustBeMoreThan60Minutes": "يجب أن يكون الوقت اكثر من ٦٠ دقيقة",
     "pleaseClickHereToLogin": "الرجاء الضغط هنا لتسجيل الدخــول",
     "clockInToBeginTheShift": "ابصـم لبدايـة الدوام",
     "timeOfExit": "وقت الخروج",
+    "timeOfEntry": "وقت الدخــول",
     "goodMorning": "صبـــاح الخيـر",
     "helloUserName": "أهلاً، {userName}",
     "@helloUserName": {

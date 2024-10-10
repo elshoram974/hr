@@ -50,6 +50,56 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `out`
+  String get outText {
+    return Intl.message(
+      'out',
+      name: 'outText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `in`
+  String get inText {
+    return Intl.message(
+      'in',
+      name: 'inText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message(
+      'Done',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log {inOut} successful`
+  String logInOutSuccessful(String inOut) {
+    return Intl.message(
+      'Log $inOut successful',
+      name: 'logInOutSuccessful',
+      desc: '',
+      args: [inOut],
+    );
+  }
+
+  /// `Time must be more than 60 minutes`
+  String get timeMustBeMoreThan60Minutes {
+    return Intl.message(
+      'Time must be more than 60 minutes',
+      name: 'timeMustBeMoreThan60Minutes',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please click here to log in`
   String get pleaseClickHereToLogin {
     return Intl.message(
@@ -130,10 +180,10 @@ class S {
     );
   }
 
-  /// `Welcome`
+  /// `Welcome...`
   String get welcome {
     return Intl.message(
-      'Welcome',
+      'Welcome...',
       name: 'welcome',
       desc: '',
       args: [],

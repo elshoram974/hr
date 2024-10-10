@@ -33,7 +33,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m5(updatedDate) => "Last update at ${updatedDate}";
 
-  static String m6(pageName) => "Page \'${pageName}\' not found in routes";
+  static String m6(inOut) => "Log ${inOut} successful";
+
+  static String m7(pageName) => "Page \'${pageName}\' not found in routes";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -57,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createdAt": m3,
         "doNotHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
+        "done": MessageLookupByLibrary.simpleMessage("Done"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email address"),
         "enterEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter email address"),
@@ -79,7 +82,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ifYouReturnNowYouWillLoseAllData":
             MessageLookupByLibrary.simpleMessage(
                 "If you return now, you will lose all data!"),
+        "inText": MessageLookupByLibrary.simpleMessage("in"),
         "lastUpdatedAt": m5,
+        "logInOutSuccessful": m6,
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginToContinue":
             MessageLookupByLibrary.simpleMessage("Please log in to continue"),
@@ -92,7 +97,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "No user found for that email."),
         "notSamePass":
             MessageLookupByLibrary.simpleMessage("Not same password"),
-        "pageNameNotFoundInRoutes": m6,
+        "outText": MessageLookupByLibrary.simpleMessage("out"),
+        "pageNameNotFoundInRoutes": m7,
         "pageNotFound": MessageLookupByLibrary.simpleMessage("Page not found"),
         "pageNumberMustBiggerThan0": MessageLookupByLibrary.simpleMessage(
             "pageNumber must be bigger than 0"),
@@ -113,10 +119,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "The supplied auth credential is incorrect, malformed or has expired."),
+        "timeMustBeMoreThan60Minutes": MessageLookupByLibrary.simpleMessage(
+            "Time must be more than 60 minutes"),
         "timeOfEntry": MessageLookupByLibrary.simpleMessage("Time of entry"),
         "timeOfExit": MessageLookupByLibrary.simpleMessage("Time of exit"),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome..."),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
         "wrongPasswordProvidedForThatUser":
             MessageLookupByLibrary.simpleMessage(
