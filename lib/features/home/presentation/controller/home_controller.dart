@@ -10,15 +10,18 @@ abstract class HomeController extends GetxController {
   final UserEntity user;
   HomeController(this.user);
 
+  void recordTime();
+
   void onPopInvoked();
 }
 
 class HomeControllerImp extends HomeController {
   HomeControllerImp(super.user);
 
-  
-  DateTime _back = DateTime.now();
+  @override
+  void recordTime() {}
 
+  DateTime _back = DateTime.now();
   @override
   void onPopInvoked() {
     if (DateTime.now().difference(_back) < const Duration(seconds: 2)) {

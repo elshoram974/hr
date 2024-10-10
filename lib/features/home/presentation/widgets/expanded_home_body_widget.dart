@@ -6,6 +6,7 @@ import 'package:hr/core/shared/responsive/constrained_box.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/constants/app_constants.dart';
 
+import '../controller/home_controller.dart';
 import 'time_row_widget.dart';
 
 class ExpandedHomeBodyWidget extends StatelessWidget {
@@ -16,6 +17,8 @@ class ExpandedHomeBodyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double padding = 2 * AppConst.defaultPadding;
+    final HomeController controller = Get.find<HomeController>();
+
     return SliverFillRemaining(
       hasScrollBody: false,
       fillOverscroll: true,
@@ -38,7 +41,7 @@ class ExpandedHomeBodyWidget extends StatelessWidget {
               const SizedBox(height: padding),
               CustomFilledButton(
                 text: S.of(context).login,
-                onPressed: () {},
+                onPressed: controller.recordTime,
                 filledColor: Colors.green,
                 style: context.textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.bold,

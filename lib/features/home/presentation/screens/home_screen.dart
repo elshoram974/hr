@@ -13,24 +13,28 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeController controller = Get.find<HomeController>();
-    return Scaffold(
-      backgroundColor: context.theme.primaryColor,
-      body: SafeArea(
-        bottom: false,
-        child: CustomScrollView(
-          slivers: [
-            TextSliverWidget(
-              text: S.of(context).helloUserName(controller.user.name),
-            ),
-            SliverToBoxAdapter(
-              child: CircularImageWidget(
-                imageUrl: controller.user.image,
-                radius: imageSize(context),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (_, __) => controller.onPopInvoked(),
+      child: Scaffold(
+        backgroundColor: context.theme.primaryColor,
+        body: SafeArea(
+          bottom: false,
+          child: CustomScrollView(
+            slivers: [
+              TextSliverWidget(
+                text: S.of(context).helloUserName(controller.user.name),
               ),
-            ),
-            TextSliverWidget(text: S.of(context).goodMorning),
-            const ExpandedHomeBodyWidget(),
-          ],
+              SliverToBoxAdapter(
+                child: CircularImageWidget(
+                  imageUrl: controller.user.image,
+                  radius: imageSize(context),
+                ),
+              ),
+              TextSliverWidget(text: S.of(context).goodMorning),
+              const ExpandedHomeBodyWidget(),
+            ],
+          ),
         ),
       ),
     );
