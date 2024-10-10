@@ -112,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "بيانات اعتماد المصادقة المقدمة غير صحيحة أو مشوهة أو منتهية الصلاحية."),
+        "timeOfEntry": MessageLookupByLibrary.simpleMessage("وقت الدخول"),
+        "timeOfExit": MessageLookupByLibrary.simpleMessage("وقت الخروج"),
         "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبـــــاً..."),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك"),

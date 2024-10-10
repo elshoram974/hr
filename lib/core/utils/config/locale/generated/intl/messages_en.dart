@@ -109,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "The supplied auth credential is incorrect, malformed or has expired."),
+        "timeOfEntry": MessageLookupByLibrary.simpleMessage("Time of entry"),
+        "timeOfExit": MessageLookupByLibrary.simpleMessage("Time of exit"),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),

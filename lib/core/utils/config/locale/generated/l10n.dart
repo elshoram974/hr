@@ -50,6 +50,26 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Time of entry`
+  String get timeOfEntry {
+    return Intl.message(
+      'Time of entry',
+      name: 'timeOfEntry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time of exit`
+  String get timeOfExit {
+    return Intl.message(
+      'Time of exit',
+      name: 'timeOfExit',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Good morning`
   String get goodMorning {
     return Intl.message(

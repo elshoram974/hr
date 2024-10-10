@@ -1,4 +1,6 @@
 {
+    "timeOfEntry": "Time of entry",
+    "timeOfExit": "Time of exit",
     "goodMorning": "Good morning",
     "helloUserName": "Hello, {userName}",
     "@helloUserName": {

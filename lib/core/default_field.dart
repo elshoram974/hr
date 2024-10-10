@@ -97,11 +97,11 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
         fillColor: widget.fillColor,
         suffixIconColor: widget.suffixIconColor,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppConst.borderRadius),
+          borderRadius: BorderRadius.circular(5),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.grey),
-          borderRadius: BorderRadius.circular(AppConst.borderRadius),
+          borderRadius: BorderRadius.circular(5),
         ),
         constraints: const BoxConstraints(maxWidth: AppConst.constraint),
         alignLabelWithHint: widget.alignLabelWithHint,

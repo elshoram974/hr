@@ -1,4 +1,6 @@
 {
+    "timeOfEntry": "وقت الدخول",
+    "timeOfExit": "وقت الخروج",
     "goodMorning": "صبـــاح الخيـر",
     "helloUserName": "أهلاً، {userName}",
     "@helloUserName": {
