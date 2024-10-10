@@ -5,6 +5,7 @@ import '../../../../features/home/presentation/screens/home_screen.dart';
 import '../../../../features/login/data/datasources/auth_local_data_source.dart';
 import '../../../../features/login/presentation/screens/login_screen.dart';
 import '../../../../features/on_boarding/presentation/screens/on_boarding_screen.dart';
+import '../../bindings/home_bindings.dart';
 import '../../bindings/login_bindings.dart';
 import '../../middleware/login_middleware.dart';
 import '../../middleware/middleware.dart';
@@ -35,6 +36,10 @@ abstract final class AppRoute {
           binding: LoginBindings(),
           middlewares: [LoginMiddleWare(Get.find<AuthLocalDataSource>())],
         ),
-        GetPage(name: home, page: () => const HomeScreen()),
+        GetPage(
+          name: home,
+          page: () => const HomeScreen(),
+          binding: HomeBindings(),
+        ),
       ];
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hr/core/shared/circular_image_widget.dart';
+import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 
+import '../controller/home_controller.dart';
+import '../widgets/expanded_home_body_widget.dart';
 import '../widgets/text_sliver_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,32 +13,24 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size screen = MediaQuery.sizeOf(context);
+    final HomeController controller = Get.find<HomeController>();
     return Scaffold(
       backgroundColor: context.theme.primaryColor,
       body: SafeArea(
         bottom: false,
         child: CustomScrollView(
           slivers: [
-            TextSliverWidget(text: "أهلاً، محمد أحمد"),
+            TextSliverWidget(
+              text: S.of(context).helloUserName(controller.user.name),
+            ),
             SliverToBoxAdapter(
               child: CircularImageWidget(
-                imageUrl: "http://via.placeholder.com/200x2048",
+                imageUrl: controller.user.image,
                 radius: 0.3 * screen.shortestSide,
               ),
             ),
-            TextSliverWidget(text: "صبـــاح الخيـر"),
-            SliverFillRemaining(
-              hasScrollBody: false,
-              fillOverscroll: true,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: context.theme.scaffoldBackgroundColor,
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(40),
-                  ),
-                ),
-              ),
-            ),
+            TextSliverWidget(text: S.of(context).goodMorning),
+            const ExpandedHomeBodyWidget(),
           ],
         ),
       ),

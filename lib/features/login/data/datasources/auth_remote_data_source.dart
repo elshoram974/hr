@@ -29,6 +29,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     // );
     // return UserEntity.fromMap(res);
 
-    return UserEntity(name: "Mohammed", email: email, image: null);
+    return UserEntity(name: "Mohammed Shora", email: email, image: "http://via.placeholder.com/200x2048");
   }
 }
