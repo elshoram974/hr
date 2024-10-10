@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hr/core/shared/custom_image_widget.dart';
+import 'package:hr/core/shared/circular_image_widget.dart';
 
 import '../widgets/text_sliver_widget.dart';
 
@@ -18,9 +18,9 @@ class HomeScreen extends StatelessWidget {
           slivers: [
             TextSliverWidget(text: "أهلاً، محمد أحمد"),
             SliverToBoxAdapter(
-              child: CustomImageWidget(
+              child: CircularImageWidget(
                 imageUrl: "http://via.placeholder.com/200x2048",
-                dimension: 0.3 * screen.shortestSide,
+                radius: 0.3 * screen.shortestSide,
               ),
             ),
             TextSliverWidget(text: "صبـــاح الخيـر"),
