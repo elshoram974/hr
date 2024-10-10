@@ -41,6 +41,7 @@ class CircularImageWidget extends StatelessWidget {
             if (imageUrl == null) {
               return Image.asset(
                 assetPlaceHolder ?? AppAssets.personPlaceholder,
+                fit: BoxFit.cover,
               );
             }
             return Icon(

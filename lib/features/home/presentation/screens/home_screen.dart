@@ -12,7 +12,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screen = MediaQuery.sizeOf(context);
     final HomeController controller = Get.find<HomeController>();
     return Scaffold(
       backgroundColor: context.theme.primaryColor,
@@ -26,7 +25,7 @@ class HomeScreen extends StatelessWidget {
             SliverToBoxAdapter(
               child: CircularImageWidget(
                 imageUrl: controller.user.image,
-                radius: 0.3 * screen.shortestSide,
+                radius: imageSize(context),
               ),
             ),
             TextSliverWidget(text: S.of(context).goodMorning),
