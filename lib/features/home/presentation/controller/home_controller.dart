@@ -7,11 +7,11 @@ import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 import '../../../login/domain/entities/user_entity.dart';
 
 abstract class HomeController extends GetxController {
-  final UserEntity user;
+  UserEntity user;
   HomeController(this.user);
 
-  DateTime? startDate;
-  DateTime? endDate;
+  DateTime? get startDate => user.startDate;
+  DateTime? get endDate => user.endDate;
 
   // bool isStartTimeLoading = false;
   // bool isEndTimeLoading = false;
@@ -28,9 +28,14 @@ abstract class HomeController extends GetxController {
 
 class HomeControllerImp extends HomeController {
   HomeControllerImp(super.user);
+  @override
+  void onInit() {
+    showStatusCard = startDate != null;
+    super.onInit();
+  }
 
   @override
-  void closeStatusDialog([bool isDayEnded = false]){
+  void closeStatusDialog([bool isDayEnded = false]) {
     showStatusCard = false;
     this.isDayEnded = isDayEnded;
     update();
@@ -42,7 +47,7 @@ class HomeControllerImp extends HomeController {
     if (startDate == null) {
       // isStartTimeLoading = true;
       // update();
-      startDate = DateTime.now();
+      user = user.setStartDate(DateTime.now());
     } else {
       final DateTime tempDate = DateTime.now();
       int duration = tempDate.difference(startDate!).inMinutes;
@@ -56,7 +61,7 @@ class HomeControllerImp extends HomeController {
       // isEndTimeLoading = true;
       // update();
 
-      endDate = tempDate;
+      user = user.setEndDate(tempDate);
     }
 
     // isEndTimeLoading = false;
