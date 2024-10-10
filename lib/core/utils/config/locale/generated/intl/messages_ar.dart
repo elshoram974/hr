@@ -29,9 +29,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(createdDate) => "تم الإنشاء في ${createdDate}";
 
-  static String m4(updatedDate) => "آخر تحديث في ${updatedDate}";
+  static String m4(userName) => "أهلاً، ${userName}";
 
-  static String m5(pageName) => "الصفحة \'${pageName}\' غير موجودة في المسارات";
+  static String m5(updatedDate) => "آخر تحديث في ${updatedDate}";
+
+  static String m6(pageName) => "الصفحة \'${pageName}\' غير موجودة في المسارات";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -67,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "goBack": MessageLookupByLibrary.simpleMessage("ارجع"),
+        "goodMorning": MessageLookupByLibrary.simpleMessage("صبـــاح الخيـر"),
+        "helloUserName": m4,
         "hidePassword":
             MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
@@ -75,7 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ifYouReturnNowYouWillLoseAllData":
             MessageLookupByLibrary.simpleMessage(
                 "إذا عدت الآن، ستفقد جميع البيانات!"),
-        "lastUpdatedAt": m4,
+        "lastUpdatedAt": m5,
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginToContinue":
             MessageLookupByLibrary.simpleMessage("للاستمرار يرجى تسجيل الدخول"),
@@ -88,7 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "لم يتم العثور على مستخدم مرتبط بهذا البريد الإلكتروني."),
         "notSamePass":
             MessageLookupByLibrary.simpleMessage("كلمة المرور غير متطابقة"),
-        "pageNameNotFoundInRoutes": m5,
+        "pageNameNotFoundInRoutes": m6,
         "pageNotFound":
             MessageLookupByLibrary.simpleMessage("الصفحة غير موجودة"),
         "pageNumberMustBiggerThan0": MessageLookupByLibrary.simpleMessage(

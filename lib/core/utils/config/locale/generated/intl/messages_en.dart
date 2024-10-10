@@ -29,9 +29,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(createdDate) => "Created at ${createdDate}";
 
-  static String m4(updatedDate) => "Last update at ${updatedDate}";
+  static String m4(userName) => "Hello, ${userName}";
 
-  static String m5(pageName) => "Page \'${pageName}\' not found in routes";
+  static String m5(updatedDate) => "Last update at ${updatedDate}";
+
+  static String m6(pageName) => "Page \'${pageName}\' not found in routes";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -66,6 +68,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget password ? "),
         "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
+        "goodMorning": MessageLookupByLibrary.simpleMessage("Good morning"),
+        "helloUserName": m4,
         "hidePassword": MessageLookupByLibrary.simpleMessage("Hide password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "humanResourcesManagement":
@@ -73,7 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ifYouReturnNowYouWillLoseAllData":
             MessageLookupByLibrary.simpleMessage(
                 "If you return now, you will lose all data!"),
-        "lastUpdatedAt": m4,
+        "lastUpdatedAt": m5,
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginToContinue":
             MessageLookupByLibrary.simpleMessage("Please log in to continue"),
@@ -86,7 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "No user found for that email."),
         "notSamePass":
             MessageLookupByLibrary.simpleMessage("Not same password"),
-        "pageNameNotFoundInRoutes": m5,
+        "pageNameNotFoundInRoutes": m6,
         "pageNotFound": MessageLookupByLibrary.simpleMessage("Page not found"),
         "pageNumberMustBiggerThan0": MessageLookupByLibrary.simpleMessage(
             "pageNumber must be bigger than 0"),

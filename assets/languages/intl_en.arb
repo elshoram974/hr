@@ -1,4 +1,13 @@
 {
+    "goodMorning": "Good morning",
+    "helloUserName": "Hello, {userName}",
+    "@helloUserName": {
+        "placeholders": {
+            "userName": {
+                "type": "String"
+            }
+        }
+    },
     "loginToContinue": "Please log in to continue",
     "startNow": "Start Now",
     "welcome": "Welcome",

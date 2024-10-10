@@ -1,4 +1,13 @@
 {
+    "goodMorning": "صبـــاح الخيـر",
+    "helloUserName": "أهلاً، {userName}",
+    "@helloUserName": {
+        "placeholders": {
+            "userName": {
+                "type": "String"
+            }
+        }
+    },
     "loginToContinue": "للاستمرار يرجى تسجيل الدخول",
     "startNow": "البـــــدء الآن",
     "welcome": "مرحبـــــاً...",

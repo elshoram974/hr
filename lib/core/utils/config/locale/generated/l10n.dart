@@ -50,6 +50,26 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Good morning`
+  String get goodMorning {
+    return Intl.message(
+      'Good morning',
+      name: 'goodMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hello, {userName}`
+  String helloUserName(String userName) {
+    return Intl.message(
+      'Hello, $userName',
+      name: 'helloUserName',
+      desc: '',
+      args: [userName],
+    );
+  }
+
   /// `Please log in to continue`
   String get loginToContinue {
     return Intl.message(
