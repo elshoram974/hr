@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cantBeLessThan": m1,
         "cantBeMoreThan": m2,
+        "clockInToBeginTheShift":
+            MessageLookupByLibrary.simpleMessage("ابصـم لبدايـة الدوام"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -100,6 +102,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
             "كلمة المرور المقدمة ضعيفة جدًا."),
+        "pleaseClickHereToLogin": MessageLookupByLibrary.simpleMessage(
+            "الرجاء الضغط هنا لتسجيل الدخــول"),
         "pressAgainToExit":
             MessageLookupByLibrary.simpleMessage("اضغط مرة أخرى للخروج"),
         "recover": MessageLookupByLibrary.simpleMessage("استعادة"),
@@ -112,7 +116,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "بيانات اعتماد المصادقة المقدمة غير صحيحة أو مشوهة أو منتهية الصلاحية."),
-        "timeOfEntry": MessageLookupByLibrary.simpleMessage("وقت الدخول"),
         "timeOfExit": MessageLookupByLibrary.simpleMessage("وقت الخروج"),
         "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبـــــاً..."),

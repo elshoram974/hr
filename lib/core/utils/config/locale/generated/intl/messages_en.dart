@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cantBeLessThan": m1,
         "cantBeMoreThan": m2,
+        "clockInToBeginTheShift":
+            MessageLookupByLibrary.simpleMessage("Clock in to begin the shift"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -97,6 +99,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
             "The password provided is too weak."),
+        "pleaseClickHereToLogin":
+            MessageLookupByLibrary.simpleMessage("Please click here to log in"),
         "pressAgainToExit":
             MessageLookupByLibrary.simpleMessage("Press again to exit"),
         "recover": MessageLookupByLibrary.simpleMessage("Recover"),

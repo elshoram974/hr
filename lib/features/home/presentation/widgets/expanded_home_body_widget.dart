@@ -46,7 +46,8 @@ class ExpandedHomeBodyWidget extends StatelessWidget {
               ),
               const SizedBox(height: padding),
               Text(
-                ,
+                S.of(context).clockInToBeginTheShift,
+                textAlign: TextAlign.center,
                 style: context.textTheme.headlineMedium?.copyWith(
                   color: context.theme.primaryColor,
                   fontWeight: FontWeight.bold,
@@ -59,7 +60,7 @@ class ExpandedHomeBodyWidget extends StatelessWidget {
               ),
               const SizedBox(height: AppConst.defaultPadding),
               Text(
-                "الرجاء الضغط هنا لتسجيل الدخــول",
+                S.of(context).pleaseClickHereToLogin,
                 textAlign: TextAlign.center,
                 style: context.textTheme.headlineSmall?.copyWith(
                   color: Colors.grey.shade700,

@@ -50,6 +50,26 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Please click here to log in`
+  String get pleaseClickHereToLogin {
+    return Intl.message(
+      'Please click here to log in',
+      name: 'pleaseClickHereToLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clock in to begin the shift`
+  String get clockInToBeginTheShift {
+    return Intl.message(
+      'Clock in to begin the shift',
+      name: 'clockInToBeginTheShift',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Time of entry`
   String get timeOfEntry {
     return Intl.message(

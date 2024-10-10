@@ -1,5 +1,6 @@
 {
-    "timeOfEntry": "وقت الدخول",
+    "pleaseClickHereToLogin": "الرجاء الضغط هنا لتسجيل الدخــول",
+    "clockInToBeginTheShift": "ابصـم لبدايـة الدوام",
     "timeOfExit": "وقت الخروج",
     "goodMorning": "صبـــاح الخيـر",
     "helloUserName": "أهلاً، {userName}",

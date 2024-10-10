@@ -1,4 +1,6 @@
 {
+    "pleaseClickHereToLogin": "Please click here to log in",
+    "clockInToBeginTheShift": "Clock in to begin the shift",
     "timeOfEntry": "Time of entry",
     "timeOfExit": "Time of exit",
     "goodMorning": "Good morning",
