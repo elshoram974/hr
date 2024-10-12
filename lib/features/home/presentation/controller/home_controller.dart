@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:get/get.dart';
+import 'package:hr/app_info.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 
@@ -51,7 +52,7 @@ class HomeControllerImp extends HomeController {
     } else {
       final DateTime tempDate = DateTime.now();
       int duration = tempDate.difference(startDate!).inMinutes;
-      if (duration > 60) {
+      if (duration < 60 && !AppInfo.isDebugMode) {
         ShowMySnackBar.call(
           S.current.timeMustBeMoreThan60Minutes,
           backgroundColor: Get.theme.colorScheme.error,
