@@ -1,11 +1,12 @@
 import 'package:hr/core/status/status.dart';
 
-import '../entities/user_entity.dart';
+import '../../data/models/user_model.dart';
+
 
 abstract class AuthRepositories {
   const AuthRepositories();
 
-  Future<Status<UserEntity>> login({
+  Future<Status<UserModel>> login({
     required String email,
     required String password,
   });

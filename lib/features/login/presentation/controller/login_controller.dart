@@ -10,7 +10,7 @@ import 'package:hr/core/utils/functions/handle_response_in_controller.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 import 'package:hr/core/utils/helper/network_helper.dart';
 
-import '../../domain/entities/user_entity.dart';
+import '../../data/models/user_model.dart';
 import '../../domain/repositories/auth_repositories.dart';
 
 abstract class LoginController extends GetxController {
@@ -40,11 +40,11 @@ class LoginControllerImp extends LoginController {
     if (!formKey.currentState!.validate()) return;
     _isLoading = true;
     update();
-    final Status<UserEntity> loginState = await repo.login(
+    final Status<UserModel> loginState = await repo.login(
       email: email,
       password: password,
     );
-    handleResponseInController<UserEntity>(
+    handleResponseInController<UserModel>(
       status: loginState,
       onSuccess: (data) {
         TextInput.finishAutofillContext();

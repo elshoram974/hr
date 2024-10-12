@@ -12,11 +12,11 @@ import 'package:hr/core/utils/helper/device_info_helper.dart';
 import 'package:hr/core/utils/helper/geolocator_helper.dart';
 import 'package:hr/core/utils/helper/network_helper.dart';
 
-import '../../../login/domain/entities/user_entity.dart';
+import '../../../login/data/models/user_model.dart';
 import '../../domain/repositories/record_time_repositories.dart';
 
 abstract class HomeController extends GetxController {
-  UserEntity user;
+  UserModel user;
   final RecordTimeRepositories repo;
   HomeController({required this.user, required this.repo});
 
@@ -77,7 +77,7 @@ class HomeControllerImp extends HomeController {
     if (_position == null) return;
 
     if (endDate != null) return;
-    final Status<UserEntity> status;
+    final Status<UserModel> status;
 
     if (startDate == null) {
       isStartTimeLoading = true;
@@ -107,7 +107,7 @@ class HomeControllerImp extends HomeController {
       );
     }
 
-    handleResponseInController<UserEntity>(
+    handleResponseInController<UserModel>(
       status: status,
       onSuccess: (data) {
         user = data;

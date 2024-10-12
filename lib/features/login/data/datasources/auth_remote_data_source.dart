@@ -1,11 +1,11 @@
-// import 'package:hr/core/utils/constants/app_links.dart';
+import 'package:hr/core/utils/constants/app_links.dart';
 import 'package:hr/core/utils/services/api_services.dart';
 
-import '../../domain/entities/user_entity.dart';
+import '../models/user_model.dart';
 
 abstract class AuthRemoteDataSource {
   const AuthRemoteDataSource();
-  Future<({UserEntity user, String token})> login({
+  Future<({UserModel user, String token})> login({
     required String email,
     required String password,
   });
@@ -16,26 +16,29 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
   final APIServices apiServices;
 
   @override
-  Future<({UserEntity user, String token})> login({
+  Future<({UserModel user, String token})> login({
     required String email,
     required String password,
   }) async {
-    // final Map<String, dynamic> res = await apiServices.post(
-    //   AppLinks.login,
-    //   {
-    //     "email": email,
-    //     "password": password,
-    //   },
-    // );
-    // return UserEntity.fromMap(res);
-
-    return (
-      user: UserEntity(
-        name: "Mohammed Shora",
-        email: email,
-        image: "http://via.placeholder.com/200x2048",
-      ),
-      token: "any thing"
+    final Map<String, dynamic> res = await apiServices.post(
+      AppLinks.login,
+      {
+        "email": email,
+        "password": password,
+      },
     );
+    return (
+      user: UserModel.fromMap(res..remove('token')),
+      token: res['token'] as String,
+    );
+
+    // return (
+    //   user: UserEntity(
+    //     name: "Mohammed Shora",
+    //     email: email,
+    //     image: "http://via.placeholder.com/200x2048",
+    //   ),
+    //   token: "any thing"
+    // );
   }
 }

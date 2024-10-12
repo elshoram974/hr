@@ -19,7 +19,7 @@ class APIServices {
     if (token != null) {
       header['Authorization'] = 'Bearer $token';
     }
-    
+
     Response<Map<String, dynamic>> response = await _dio.post(
       link,
       data: body,
@@ -28,9 +28,11 @@ class APIServices {
 
     if (response.statusCode != 200) {
       throw response.statusMessage!;
+    } else if (response.data!['is_success'] == false) {
+      throw response.data!['message'];
     }
 
-    return response.data!;
+    return response.data!['data'];
   }
 
   Future<String?> get _getAuthToken => _storage.read(key: AppString.kTokenKey);

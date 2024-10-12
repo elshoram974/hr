@@ -1,6 +1,6 @@
 abstract final class AppStyle {
   const AppStyle();
-  
+
   // static const TextStyle styleBoldRegular16 = TextStyle(
   //   fontSize: 16,
   //   color: AppColor.gray,

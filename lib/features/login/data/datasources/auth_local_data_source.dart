@@ -2,13 +2,13 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hr/core/utils/constants/app_strings.dart';
 
-import '../../domain/entities/user_entity.dart';
+import '../models/user_model.dart';
 
 abstract class AuthLocalDataSource {
   const AuthLocalDataSource();
-  Future<int> saveUser(UserEntity user);
+  Future<int> saveUser(UserModel user);
   Future<void> saveToken(String token);
-  UserEntity? getCurrentUser();
+  UserModel? getCurrentUser();
   Future<void> logOut();
 }
 
@@ -18,7 +18,7 @@ class AuthLocalDataSourceImp extends AuthLocalDataSource {
   final FlutterSecureStorage _storage;
 
   @override
-  Future<int> saveUser(UserEntity user) async {
+  Future<int> saveUser(UserModel user) async {
     await _userBox.clear();
 
     return _userBox.add(user.toMap());
@@ -30,10 +30,10 @@ class AuthLocalDataSourceImp extends AuthLocalDataSource {
   }
 
   @override
-  UserEntity? getCurrentUser() {
+  UserModel? getCurrentUser() {
     final Map? map = _userBox.values.lastOrNull;
     if (map == null) return null;
-    return UserEntity.fromMap(map);
+    return UserModel.fromMap(map);
   }
 
   @override
