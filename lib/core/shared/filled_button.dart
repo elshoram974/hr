@@ -48,6 +48,7 @@ class CustomFilledButton extends StatelessWidget {
           ),
           child: Text(
             text,
+            textAlign: TextAlign.center,
             style: style?.copyWith(color: Colors.white) ??
                 const TextStyle(color: Colors.white),
             maxLines: 2,
