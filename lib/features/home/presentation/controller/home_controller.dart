@@ -3,22 +3,28 @@ import 'dart:io';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:hr/app_info.dart';
+import 'package:hr/core/status/status.dart';
+import 'package:hr/core/status/success/success.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 import 'package:hr/core/utils/helper/device_info_helper.dart';
 import 'package:hr/core/utils/helper/geolocator_helper.dart';
 
 import '../../../login/domain/entities/user_entity.dart';
+import '../../domain/repositories/record_time_repositories.dart';
 
 abstract class HomeController extends GetxController {
   UserEntity user;
-  HomeController(this.user);
+  final RecordTimeRepositories repo;
+  HomeController({required this.user, required this.repo});
 
   DateTime? get startDate => user.startDate;
   DateTime? get endDate => user.endDate;
 
-  // bool isStartTimeLoading = false;
-  // bool isEndTimeLoading = false;
+  bool isStartTimeLoading = false;
+  bool isEndTimeLoading = false;
+
+  bool get isLoading => isStartTimeLoading || isEndTimeLoading;
 
   bool showStatusCard = false;
 
@@ -33,7 +39,7 @@ abstract class HomeController extends GetxController {
 }
 
 class HomeControllerImp extends HomeController {
-  HomeControllerImp(super.user);
+  HomeControllerImp({required super.user, required super.repo});
 
   Position? _position;
 
@@ -57,7 +63,7 @@ class HomeControllerImp extends HomeController {
 
   @override
   void recordTime() async {
-    final Future<List<dynamic>> data = Future.wait(
+    final List<dynamic> data = await Future.wait(
       [
         DeviceInfoHelper.getDeviceInfo(),
         setLocation(),
@@ -67,11 +73,16 @@ class HomeControllerImp extends HomeController {
     if (_position == null) return;
 
     if (endDate != null) return;
+    final Status<UserEntity> status;
 
     if (startDate == null) {
-      // isStartTimeLoading = true;
-      // update();
-      user = user.setStartDate(DateTime.now());
+      isStartTimeLoading = true;
+      update();
+      // user = user.setStartDate(DateTime.now());
+      status = await repo.recordTime(
+        deviceInfo: data[0],
+        position: _position!,
+      );
     } else {
       final DateTime tempDate = DateTime.now();
       int duration = tempDate.difference(startDate!).inMinutes;
@@ -82,15 +93,24 @@ class HomeControllerImp extends HomeController {
         );
         return;
       }
-      // isEndTimeLoading = true;
-      // update();
+      isEndTimeLoading = true;
+      update();
 
-      user = user.setEndDate(tempDate);
+      // user = user.setEndDate(tempDate);
+      status = await repo.recordTime(
+        deviceInfo: data[0],
+        position: _position!,
+      );
     }
 
-    // isEndTimeLoading = false;
-    // isStartTimeLoading = false;
-    showStatusCard = true;
+    if (status is Success<UserEntity>) {
+      user = status.data;
+      showStatusCard = true;
+    }
+
+    isEndTimeLoading = false;
+    isStartTimeLoading = false;
+
     _position = null;
     update();
   }

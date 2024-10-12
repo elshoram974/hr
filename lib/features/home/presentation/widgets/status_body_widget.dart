@@ -27,6 +27,7 @@ class StatusBodyWidget extends StatelessWidget {
           child: Column(
             children: [
               CustomFilledButton(
+                isLoading: controller.isLoading,
                 text: controller.startDate == null
                     ? S.of(context).login
                     : S.of(context).logOut,

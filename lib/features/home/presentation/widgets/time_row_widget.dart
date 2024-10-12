@@ -22,7 +22,7 @@ class TimeRowWidget extends StatelessWidget {
               return TimeCard(
                 title: S.of(context).timeOfEntry,
                 time: controller.startDate,
-                // isLoading: controller.isStartTimeLoading,
+                isLoading: controller.isStartTimeLoading,
                 isEnded: controller.endDate != null,
               );
             },
@@ -36,7 +36,7 @@ class TimeRowWidget extends StatelessWidget {
               return TimeCard(
                 title: S.of(context).timeOfExit,
                 time: controller.endDate,
-                // isLoading: controller.isEndTimeLoading,
+                isLoading: controller.isEndTimeLoading,
                 isEnded: controller.endDate != null,
               );
             },
