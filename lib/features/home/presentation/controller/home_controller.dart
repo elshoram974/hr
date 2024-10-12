@@ -1,11 +1,12 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:hr/app_info.dart';
 import 'package:hr/core/status/status.dart';
-import 'package:hr/core/status/success/success.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
+import 'package:hr/core/utils/functions/handle_response_in_controller.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 import 'package:hr/core/utils/helper/device_info_helper.dart';
 import 'package:hr/core/utils/helper/geolocator_helper.dart';
@@ -106,10 +107,13 @@ class HomeControllerImp extends HomeController {
       );
     }
 
-    if (status is Success<UserEntity>) {
-      user = status.data;
-      showStatusCard = true;
-    }
+    handleResponseInController<UserEntity>(
+      status: status,
+      onSuccess: (data) {
+        user = data;
+        showStatusCard = true;
+      },
+    );
 
     isEndTimeLoading = false;
     isStartTimeLoading = false;

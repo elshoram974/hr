@@ -3,11 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hr/core/status/errors/failure.dart';
 import 'package:hr/core/status/status.dart';
-import 'package:hr/core/status/success/success.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/config/routes/routes.dart';
+import 'package:hr/core/utils/functions/handle_response_in_controller.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 import 'package:hr/core/utils/helper/network_helper.dart';
 
@@ -39,22 +38,19 @@ class LoginControllerImp extends LoginController {
     if (NetworkInfo.showSnackBarWhenNoInternet) return;
 
     if (!formKey.currentState!.validate()) return;
-    print("email :${email.trim()}");
-    print("password :${password.trim()}");
     _isLoading = true;
     update();
     final Status<UserEntity> loginState = await repo.login(
       email: email,
       password: password,
     );
-    if (loginState is Success<UserEntity>) {
-      TextInput.finishAutofillContext();
-      Get.offAllNamed(AppRoute.home);
-    } else if (loginState is Failure<UserEntity>) {
-      ShowMySnackBar.call(
-        loginState.failure.message,
-      );
-    }
+    handleResponseInController<UserEntity>(
+      status: loginState,
+      onSuccess: (data) {
+        TextInput.finishAutofillContext();
+        Get.offAllNamed(AppRoute.home);
+      },
+    );
 
     _isLoading = false;
     update();
