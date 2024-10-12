@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cantBeLessThan": m1,
         "cantBeMoreThan": m2,
+        "clientTookTooLong": MessageLookupByLibrary.simpleMessage(
+            "The client took too long to respond."),
         "clockInToBeginTheShift":
             MessageLookupByLibrary.simpleMessage("Clock in to begin the shift"),
         "clockInToEndTheShift":
@@ -126,19 +128,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "requestLocationPermission": MessageLookupByLibrary.simpleMessage(
             "Please grant permission to access your device\'s location"),
         "returnBack": MessageLookupByLibrary.simpleMessage("Return back"),
+        "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
+            "The server took too long to respond."),
+        "serverTookTooLongToRespond": MessageLookupByLibrary.simpleMessage(
+            "The server took too long to respond."),
         "showPassword": MessageLookupByLibrary.simpleMessage("Show password"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "sslCertificateNotTrusted": MessageLookupByLibrary.simpleMessage(
+            "The SSL certificate is not trusted."),
         "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
         "stayHere": MessageLookupByLibrary.simpleMessage("Stay here"),
         "successfully": MessageLookupByLibrary.simpleMessage("successfully"),
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "The supplied auth credential is incorrect, malformed or has expired."),
+        "thereIsProblemWithServerTryAgainLater":
+            MessageLookupByLibrary.simpleMessage(
+                "There is a problem with the server. Try again later."),
         "timeMustBeMoreThan60Minutes": MessageLookupByLibrary.simpleMessage(
             "Time must be more than 60 minutes"),
         "timeOfEntry": MessageLookupByLibrary.simpleMessage("Time of entry"),
         "timeOfExit": MessageLookupByLibrary.simpleMessage("Time of exit"),
+        "unauthorizedError": MessageLookupByLibrary.simpleMessage(
+            "Your session has expired or you are not authorized. Please log in again."),
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
+        "unknownErrorOccurred":
+            MessageLookupByLibrary.simpleMessage("An unknown error occurred."),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome..."),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome back"),
         "wrongPasswordProvidedForThatUser":

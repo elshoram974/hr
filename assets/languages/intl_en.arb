@@ -1,4 +1,11 @@
 {
+    "unauthorizedError": "Your session has expired or you are not authorized. Please log in again.",
+    "thereIsProblemWithServerTryAgainLater": "There is a problem with the server. Try again later.",
+    "serverTookTooLongToRespond": "The server took too long to respond.",
+    "sslCertificateNotTrusted": "The SSL certificate is not trusted.",
+    "unknownErrorOccurred": "An unknown error occurred.",
+    "clientTookTooLong": "The client took too long to respond.",
+    "serverTookTooLong": "The server took too long to respond.",
     "connectedToInternet": "Connected to the internet",
     "enableService": "Enable Service",
     "locationServiceDisabled": "The location service on the device is disabled.",

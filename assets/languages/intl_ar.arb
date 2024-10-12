@@ -1,4 +1,11 @@
 {
+    "unauthorizedError": "انتهت صلاحية جلستك أو ليس لديك إذن. يرجى تسجيل الدخول مرة أخرى.",
+    "thereIsProblemWithServerTryAgainLater": "هناك مشكلة في الخادم. حاول مرة أخرى لاحقًا.",
+    "clientTookTooLong": "استغرق العميل وقتًا طويلاً للاستجابة.",
+    "unknownErrorOccurred": "حدث خطأ غير معروف.",
+    "sslCertificateNotTrusted": "شهادة SSL غير موثوقة.",
+    "serverTookTooLongToRespond": "استغرق الخادم وقتًا طويلاً للاستجابة.",
+    "serverTookTooLong": "استغرق الخادم وقتًا طويلاً للاستجابة.",
     "connectedToInternet": "متصل بالإنترنت",
     "enableService": "تفعيل الخدمة",
     "locationServiceDisabled": "خدمة الموقع على الجهاز معطلة.",

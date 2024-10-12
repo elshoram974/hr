@@ -1,219 +1,103 @@
 // ! Failure --------------------------
 
-// import 'dart:developer';
+import 'dart:developer';
 
-// import 'failure.dart';
-// import 'failure_body.dart';
+import 'package:dio/dio.dart';
 
-// class ServerFailure<T> extends Failure<T> {
-//   ServerFailure(super.failure);
-//   factory ServerFailure.fromHttpException(MyHttpException e) {
-//     final FailureBody res = FailureBody(httpExceptionType: e.type);
-//     switch (e.type) {
-//       case HttpExceptionType.connectionTimeout:
-//         return ServerFailure(
-//           res.copyWith(
-//             code: 408,
-//             type: 'connection-timeout',
-//             message: S.current.serverTookTooLongToRespond,
-//           ),
-//         );
+import '../../utils/config/locale/generated/l10n.dart';
+import 'failure.dart';
+import 'failure_body.dart';
 
-//       case HttpExceptionType.badCertificate:
-//         return ServerFailure(
-//           res.copyWith(
-//             code: 403,
-//             type: 'certificate-error',
-//             message: S.current.sslCertificateNotTrusted,
-//           ),
-//         );
+class ServerFailure<T> extends Failure<T> {
+  const ServerFailure(super.failure);
+  factory ServerFailure.fromDioException(DioException e) {
+    final FailureBody res = FailureBody(dioExceptionType: e.type);
 
-//       case HttpExceptionType.badResponse:
-//         final String body = (e.response as Response).body.trim();
-//         return ServerFailure.fromBadResponse(
-//           body == ''
-//               ? const FailureBody(code: 500)
-//               : FailureBody.fromJson(body).copyWith(
-//                   httpExceptionType: HttpExceptionType.badResponse,
-//                 ),
-//         );
-//       case HttpExceptionType.cancel:
-//         return ServerFailure(
-//           res.copyWith(
-//             code: 499,
-//             type: 'request-canceled',
-//             message: S.current.cancel,
-//           ),
-//         );
+    switch (e.type) {
+      case DioExceptionType.connectionTimeout:
+        return ServerFailure(
+          res.copyWith(
+            code: 408,
+            type: 'connection-timeout',
+            message: S.current.serverTookTooLongToRespond,
+          ),
+        );
 
-//       case HttpExceptionType.connectionError:
-//         return ServerFailure(
-//           res.copyWith(
-//             code: 503,
-//             type: 'connection-error',
-//             message: S.current.noInternetConnection,
-//           ),
-//         );
+      case DioExceptionType.badCertificate:
+        return ServerFailure(
+          res.copyWith(
+            code: 403,
+            type: 'certificate-error',
+            message: S.current.sslCertificateNotTrusted,
+          ),
+        );
 
-//       case HttpExceptionType.receiveTimeout:
-//         return ServerFailure(
-//           res.copyWith(
-//             code: 504,
-//             type: 'receive-timeout',
-//             message: S.current.serverTookTooLong,
-//           ),
-//         );
+      case DioExceptionType.badResponse:
+        return ServerFailure.fromBadResponse(e);
+      case DioExceptionType.cancel:
+        return ServerFailure(
+          res.copyWith(
+            code: 499,
+            type: 'request-canceled',
+            message: S.current.cancel,
+          ),
+        );
 
-//       case HttpExceptionType.sendTimeout:
-//         return ServerFailure(
-//           res.copyWith(
-//             code: 504,
-//             type: 'send-timeout',
-//             message: S.current.clientTookTooLong,
-//           ),
-//         );
-//       default:
-//         log(e.message ?? '');
-//         return ServerFailure(
-//           res.copyWith(
-//             type: 'unknown-error',
-//             message: S.current.unknownErrorOccurred,
-//           ),
-//         );
-//     }
-//   }
+      case DioExceptionType.connectionError:
+        return ServerFailure(
+          res.copyWith(
+            code: 503,
+            type: 'connection-error',
+            message: S.current.noInternetConnection,
+          ),
+        );
 
-//   factory ServerFailure.fromBadResponse(FailureBody res) {
-//     int? statusCode = res.code;
-//     if (statusCode == 404) {
-//       return ServerFailure(
-//           res.copyWith(message: S.current.yourRequestNotFoundTryAgainLater));
-//     } else if (statusCode == 500) {
-//       return ServerFailure(res.copyWith(
-//           message: S.current.thereIsProblemWithServerTryAgainLater));
-//     } else if (statusCode == 413) {
-//       return ServerFailure(res.copyWith(
-//           message: S.current
-//               .theUploadedFileExceedsTheMaximumAllowedSizePleaseUploadSmallerFile));
-//     }
-//     return notValid(res);
-//   }
+      case DioExceptionType.receiveTimeout:
+        return ServerFailure(
+          res.copyWith(
+            code: 504,
+            type: 'receive-timeout',
+            message: S.current.serverTookTooLong,
+          ),
+        );
 
-//   static ServerFailure<T> notValid<T>(FailureBody res) {
-//     switch (res.message) {
-//       case 'You have to confirm your account':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.youHaveToConfirmYourAccount),
-//         );
-//       case 'Error in password':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.errorInPassword),
-//         );
-//       case 'The email you entered does not exist' ||
-//             'The userId you entered does not exist':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.emailYouEnteredDoesNotExist),
-//         );
-//       case 'User created by another provider':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.thisAccountExistWithAnotherProvider),
-//         );
-//       case 'This email already exists':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.thisEmailAlreadyExists),
-//         );
-//       case 'The password is very weak':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.thePasswordIsVeryWeak),
-//         );
-//       case 'You can\'t use the same previous password':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.youCanNotUseSamePreviousPassword),
-//         );
-//       case 'Invalid verification code':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.invalidVerificationCode),
-//         );
-//       case 'The verification code has expired. we sent another code':
-//         return ServerFailure(
-//           res.copyWith(
-//             message: S.current.theVerificationCodeHasExpiredWeSentAnotherCode,
-//           ),
-//         );
-//       case 'Invalid verification type.':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.invalidVerificationType),
-//         );
-//       case 'User is not email_password to make new pass':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.userNotEmailPasswordToNewPass),
-//         );
-//       case 'User is not email_password to send verification code.':
-//         return ServerFailure(
-//           res.copyWith(
-//             message: S.current.userNotEmailPasswordToSendVerificationCode,
-//           ),
-//         );
-//       case 'password is changed':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.thePassIsChangedFromAnotherDevice),
-//         );
-//       case 'this user is not put image':
-//         return ServerFailure(
-//           res.copyWith(
-//             message: S.current.theImageYouAreTryingToDeleteDoesNotExist,
-//           ),
-//         );
-//       case 'This file is not support':
-//         return ServerFailure(
-//           res.copyWith(
-//             message: S.current
-//                 .theUploadedFileTypeIsNotSupportedPleaseUploadAnImageFile,
-//           ),
-//         );
-//       case 'This file is larg in size':
-//         return ServerFailure(
-//           res.copyWith(
-//             message: S.current
-//                 .theUploadedFileExceedsTheMaximumAllowedSizePleaseUploadSmallerFile,
-//           ),
-//         );
-//       case 'User is not active!':
-//         return ServerFailure(
-//           res.copyWith(
-//             message: S.current
-//                 .userIsNotActivePleaseContactSupportForFurtherAssistance,
-//           ),
-//         );
-//       case 'User does not have permission to perform this action.':
-//         return ServerFailure(res.copyWith(message: S.current.userNoPermission));
-//       case 'Error deleting direction from database. Please try again later.':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.errorDeletingDirectory),
-//         );
-//       case 'Error deleting activity from database. Please try again later.':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.errorDeletingActivity),
-//         );
-//       case 'you can not change the permissions of owner of group.':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.uCanNtChangeRoleOfTheOwnerOfGroup),
-//         );
-//       case 'you can not remove the owner of group.':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.uCanNtRemoveOwnerOfGroup),
-//         );
-//       case 'Cannot block a user who is an admin.':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.uCanNtBlockAdmins),
-//         );
-//       case 'Error changing the user status. Please try again later.':
-//         return ServerFailure(
-//           res.copyWith(message: S.current.errorChangingUserRoleTryAgainLater),
-//         );
+      case DioExceptionType.sendTimeout:
+        return ServerFailure(
+          res.copyWith(
+            code: 504,
+            type: 'send-timeout',
+            message: S.current.clientTookTooLong,
+          ),
+        );
+      default:
+        log(e.message ?? '');
+        return ServerFailure(
+          res.copyWith(
+            type: 'unknown-error',
+            message: S.current.unknownErrorOccurred,
+          ),
+        );
+    }
+  }
+  factory ServerFailure.fromBadResponse(DioException e) {
+    int? statusCode = e.response!.statusCode;
 
-//       default:
-//         return ServerFailure(res);
-//     }
-//   }
-// }
+    final FailureBody res = FailureBody(
+      type: e.type.name,
+      code: statusCode ?? -1,
+      message: e.response!.data['message'],
+      dioExceptionType: e.type,
+    );
+
+    if (statusCode == 500) {
+      return ServerFailure(
+        res.copyWith(message: S.current.thereIsProblemWithServerTryAgainLater),
+      );
+    } else if (statusCode == 401) {
+      return ServerFailure(
+        res.copyWith(message: S.current.unauthorizedError),
+      );
+    }
+    return ServerFailure(res);
+  }
+}

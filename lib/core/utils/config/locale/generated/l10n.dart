@@ -50,6 +50,76 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Your session has expired or you are not authorized. Please log in again.`
+  String get unauthorizedError {
+    return Intl.message(
+      'Your session has expired or you are not authorized. Please log in again.',
+      name: 'unauthorizedError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is a problem with the server. Try again later.`
+  String get thereIsProblemWithServerTryAgainLater {
+    return Intl.message(
+      'There is a problem with the server. Try again later.',
+      name: 'thereIsProblemWithServerTryAgainLater',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The server took too long to respond.`
+  String get serverTookTooLongToRespond {
+    return Intl.message(
+      'The server took too long to respond.',
+      name: 'serverTookTooLongToRespond',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The SSL certificate is not trusted.`
+  String get sslCertificateNotTrusted {
+    return Intl.message(
+      'The SSL certificate is not trusted.',
+      name: 'sslCertificateNotTrusted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unknown error occurred.`
+  String get unknownErrorOccurred {
+    return Intl.message(
+      'An unknown error occurred.',
+      name: 'unknownErrorOccurred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The client took too long to respond.`
+  String get clientTookTooLong {
+    return Intl.message(
+      'The client took too long to respond.',
+      name: 'clientTookTooLong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The server took too long to respond.`
+  String get serverTookTooLong {
+    return Intl.message(
+      'The server took too long to respond.',
+      name: 'serverTookTooLong',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Connected to the internet`
   String get connectedToInternet {
     return Intl.message(

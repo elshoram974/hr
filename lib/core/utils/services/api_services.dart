@@ -20,15 +20,15 @@ class APIServices {
       header['Authorization'] = 'Bearer $token';
     }
 
+    print(header);
+
     Response<Map<String, dynamic>> response = await _dio.post(
       link,
       data: body,
       options: header.isEmpty ? null : Options(headers: header),
     );
 
-    if (response.statusCode != 200) {
-      throw response.statusMessage!;
-    } else if (response.data!['is_success'] == false) {
+    if (response.data!['is_success'] == false) {
       throw response.data!['message'];
     }
 

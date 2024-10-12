@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 
 class FailureBody extends Equatable {
@@ -7,13 +8,13 @@ class FailureBody extends Equatable {
   final int code;
   final String type;
   final String message;
-  // final HttpExceptionType httpExceptionType;
+  final DioExceptionType dioExceptionType;
 
   const FailureBody({
     this.code = -1,
     this.type = 'unKnown',
     this.message = 'unKnownMessage',
-    // this.httpExceptionType = HttpExceptionType.unknown,
+    this.dioExceptionType = DioExceptionType.unknown,
   });
 
   factory FailureBody.fromMap(Map<String, dynamic> data) => FailureBody(
@@ -45,13 +46,13 @@ class FailureBody extends Equatable {
     int? code,
     String? type,
     String? message,
-    // HttpExceptionType? httpExceptionType,
+    DioExceptionType? dioExceptionType,
   }) {
     return FailureBody(
       code: code ?? this.code,
       type: type ?? this.type,
       message: message ?? this.message,
-      // httpExceptionType: httpExceptionType ?? this.httpExceptionType,
+      dioExceptionType: dioExceptionType ?? this.dioExceptionType,
     );
   }
 

@@ -6,7 +6,7 @@ class UserModel extends Equatable {
   final String name;
   final String email;
   final String? image;
-  final int? employeeId;
+  final String? employeeId;
   final DateTime? startDate;
   final DateTime? endDate;
 
@@ -27,7 +27,7 @@ class UserModel extends Equatable {
         name: json['name'] as String,
         email: json['email'] as String,
         image: json['image'] as String?,
-        employeeId: json['employee_id'] as int?,
+        employeeId: json['employee_id'] as String?,
         startDate: json['start_date'] == null
             ? null
             : DateTime.parse(json['start_date'] as String),
@@ -53,7 +53,7 @@ class UserModel extends Equatable {
     String? name,
     String? email,
     String? image,
-    int? employeeId,
+    String? employeeId,
     DateTime? startDate,
     DateTime? endDate,
   }) {

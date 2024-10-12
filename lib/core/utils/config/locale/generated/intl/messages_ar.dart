@@ -47,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cantBeLessThan": m1,
         "cantBeMoreThan": m2,
+        "clientTookTooLong": MessageLookupByLibrary.simpleMessage(
+            "استغرق العميل وقتًا طويلاً للاستجابة."),
         "clockInToBeginTheShift":
             MessageLookupByLibrary.simpleMessage("ابصـم لبدايـة الدوام"),
         "clockInToEndTheShift":
@@ -129,19 +131,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "requestLocationPermission": MessageLookupByLibrary.simpleMessage(
             "الرجاء منح الإذن للوصول إلى موقع جهازك"),
         "returnBack": MessageLookupByLibrary.simpleMessage("العودة"),
+        "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
+            "استغرق الخادم وقتًا طويلاً للاستجابة."),
+        "serverTookTooLongToRespond": MessageLookupByLibrary.simpleMessage(
+            "استغرق الخادم وقتًا طويلاً للاستجابة."),
         "showPassword": MessageLookupByLibrary.simpleMessage("عرض كلمة المرور"),
         "signUp": MessageLookupByLibrary.simpleMessage("التسجيل"),
+        "sslCertificateNotTrusted":
+            MessageLookupByLibrary.simpleMessage("شهادة SSL غير موثوقة."),
         "startNow": MessageLookupByLibrary.simpleMessage("البـــــدء الآن"),
         "stayHere": MessageLookupByLibrary.simpleMessage("ابق هنا"),
         "successfully": MessageLookupByLibrary.simpleMessage("بنجاح"),
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
                 "بيانات اعتماد المصادقة المقدمة غير صحيحة أو مشوهة أو منتهية الصلاحية."),
+        "thereIsProblemWithServerTryAgainLater":
+            MessageLookupByLibrary.simpleMessage(
+                "هناك مشكلة في الخادم. حاول مرة أخرى لاحقًا."),
         "timeMustBeMoreThan60Minutes": MessageLookupByLibrary.simpleMessage(
             "يجب أن يكون الوقت اكثر من ٦٠ دقيقة"),
         "timeOfEntry": MessageLookupByLibrary.simpleMessage("وقت الدخــول"),
         "timeOfExit": MessageLookupByLibrary.simpleMessage("وقت الخروج"),
+        "unauthorizedError": MessageLookupByLibrary.simpleMessage(
+            "انتهت صلاحية جلستك أو ليس لديك إذن. يرجى تسجيل الدخول مرة أخرى."),
         "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
+        "unknownErrorOccurred":
+            MessageLookupByLibrary.simpleMessage("حدث خطأ غير معروف."),
         "welcome": MessageLookupByLibrary.simpleMessage("أهلاً بـك..."),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك"),
         "wrongPasswordProvidedForThatUser":

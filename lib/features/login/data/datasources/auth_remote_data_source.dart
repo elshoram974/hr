@@ -27,9 +27,11 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
         "password": password,
       },
     );
+    final String token = res['token'];
+
     return (
       user: UserModel.fromMap(res..remove('token')),
-      token: res['token'] as String,
+      token: token,
     );
 
     // return (
