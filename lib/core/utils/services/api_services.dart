@@ -20,8 +20,6 @@ class APIServices {
       header['Authorization'] = 'Bearer $token';
     }
 
-    print(header);
-
     Response<Map<String, dynamic>> response = await _dio.post(
       link,
       data: body,
