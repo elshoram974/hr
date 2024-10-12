@@ -17,7 +17,7 @@ class InitMiddleWare extends GetMiddleware {
   RouteSettings? redirect(String? route) {
     if (authLocal.getCurrentUser() != null) {
       return const RouteSettings(name: AppRoute.home);
-    } else if (prefs.getBool(AppString.kIsFirstOpen) == false) {
+    } else if (prefs.containsKey(AppString.kLocaleCode)) {
       return const RouteSettings(name: AppRoute.login);
     }
 
