@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:hr/app_info.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
+import 'package:hr/core/utils/helper/geolocator_helper.dart';
 
 import '../../../login/domain/entities/user_entity.dart';
 
@@ -21,6 +23,8 @@ abstract class HomeController extends GetxController {
 
   bool isDayEnded = false;
 
+  Future<void> setLocation();
+
   void closeStatusDialog([bool isDayEnded = false]);
   void recordTime();
 
@@ -29,6 +33,15 @@ abstract class HomeController extends GetxController {
 
 class HomeControllerImp extends HomeController {
   HomeControllerImp(super.user);
+
+  Position? _position;
+
+  @override
+  Future<void> setLocation() async {
+    _position = await GeolocatorHelper.handlePermission();
+    print(_position);
+  }
+
   @override
   void onInit() {
     showStatusCard = startDate != null;
@@ -43,8 +56,12 @@ class HomeControllerImp extends HomeController {
   }
 
   @override
-  void recordTime() {
+  void recordTime() async {
+    await setLocation();
+    if (_position == null) return;
+
     if (endDate != null) return;
+
     if (startDate == null) {
       // isStartTimeLoading = true;
       // update();
@@ -68,6 +85,7 @@ class HomeControllerImp extends HomeController {
     // isEndTimeLoading = false;
     // isStartTimeLoading = false;
     showStatusCard = true;
+    _position = null;
     update();
   }
 
