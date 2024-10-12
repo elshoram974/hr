@@ -1,4 +1,8 @@
 {
+    "enableService": "تفعيل الخدمة",
+    "locationServiceDisabled": "خدمة الموقع على الجهاز معطلة.",
+    "grantLocationAccess": "السماح بالوصول إلى الموقع",
+    "requestLocationPermission": "الرجاء منح الإذن للوصول إلى موقع جهازك",
     "goodbye": "إلى اللقــاء...",
     "successfully": "بنجاح",
     "logOut": "تسجيل الخروج",

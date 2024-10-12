@@ -21,9 +21,10 @@ abstract final class ShowMySnackBar {
           content,
           textAlign: TextAlign.center,
           style: style ??
-              const TextStyle(
+              TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
+                color: backgroundColor == null ? null : Colors.white,
               ),
         ),
         action: action,
@@ -35,6 +36,25 @@ abstract final class ShowMySnackBar {
         behavior: SnackBarBehavior.floating,
         margin: const EdgeInsets.all(AppConst.defaultPadding),
         duration: duration ?? AppConst.duration,
+        actionOverflowThreshold: 1,
+      ),
+    );
+  }
+
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
+      reRequestPermissionToast({
+    required String text,
+    required String actionText,
+    required void Function() onPressed,
+  }) {
+    return call(
+      text,
+      duration: const Duration(seconds: 5),
+      backgroundColor: Get.theme.colorScheme.error,
+      action: SnackBarAction(
+        label: actionText,
+        onPressed: onPressed,
+        textColor: Get.theme.primaryColor,
       ),
     );
   }

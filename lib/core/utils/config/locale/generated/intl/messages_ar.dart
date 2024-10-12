@@ -62,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "done": MessageLookupByLibrary.simpleMessage("تــم"),
         "emailAddress":
             MessageLookupByLibrary.simpleMessage("عنوان البريد الإلكتروني"),
+        "enableService": MessageLookupByLibrary.simpleMessage("تفعيل الخدمة"),
         "enterEmailAddress": MessageLookupByLibrary.simpleMessage(
             "أدخل عنوان البريد الالكتروني"),
         "enterThePassword":
@@ -76,6 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "goBack": MessageLookupByLibrary.simpleMessage("ارجع"),
         "goodMorning": MessageLookupByLibrary.simpleMessage("صبـــاح الخيـر"),
         "goodbye": MessageLookupByLibrary.simpleMessage("إلى اللقــاء..."),
+        "grantLocationAccess":
+            MessageLookupByLibrary.simpleMessage("السماح بالوصول إلى الموقع"),
         "helloUserName": m4,
         "hidePassword":
             MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
@@ -87,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "إذا عدت الآن، ستفقد جميع البيانات!"),
         "inText": MessageLookupByLibrary.simpleMessage("الدخول"),
         "lastUpdatedAt": m5,
+        "locationServiceDisabled": MessageLookupByLibrary.simpleMessage(
+            "خدمة الموقع على الجهاز معطلة."),
         "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "logged": MessageLookupByLibrary.simpleMessage("تم تسجيل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -118,6 +123,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اضغط مرة أخرى للخروج"),
         "recover": MessageLookupByLibrary.simpleMessage("استعادة"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
+        "requestLocationPermission": MessageLookupByLibrary.simpleMessage(
+            "الرجاء منح الإذن للوصول إلى موقع جهازك"),
         "returnBack": MessageLookupByLibrary.simpleMessage("العودة"),
         "showPassword": MessageLookupByLibrary.simpleMessage("عرض كلمة المرور"),
         "signUp": MessageLookupByLibrary.simpleMessage("التسجيل"),

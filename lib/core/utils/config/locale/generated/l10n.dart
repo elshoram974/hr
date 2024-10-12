@@ -50,6 +50,46 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Enable Service`
+  String get enableService {
+    return Intl.message(
+      'Enable Service',
+      name: 'enableService',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The location service on the device is disabled.`
+  String get locationServiceDisabled {
+    return Intl.message(
+      'The location service on the device is disabled.',
+      name: 'locationServiceDisabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow Location Access`
+  String get grantLocationAccess {
+    return Intl.message(
+      'Allow Location Access',
+      name: 'grantLocationAccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please grant permission to access your device's location`
+  String get requestLocationPermission {
+    return Intl.message(
+      'Please grant permission to access your device\'s location',
+      name: 'requestLocationPermission',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Good bye...`
   String get goodbye {
     return Intl.message(

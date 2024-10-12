@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email address"),
+        "enableService": MessageLookupByLibrary.simpleMessage("Enable Service"),
         "enterEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter email address"),
         "enterThePassword":
@@ -75,6 +76,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
         "goodMorning": MessageLookupByLibrary.simpleMessage("Good morning"),
         "goodbye": MessageLookupByLibrary.simpleMessage("Good bye..."),
+        "grantLocationAccess":
+            MessageLookupByLibrary.simpleMessage("Allow Location Access"),
         "helloUserName": m4,
         "hidePassword": MessageLookupByLibrary.simpleMessage("Hide password"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -85,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "If you return now, you will lose all data!"),
         "inText": MessageLookupByLibrary.simpleMessage("in"),
         "lastUpdatedAt": m5,
+        "locationServiceDisabled": MessageLookupByLibrary.simpleMessage(
+            "The location service on the device is disabled."),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "logged": MessageLookupByLibrary.simpleMessage("Logged"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -115,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Press again to exit"),
         "recover": MessageLookupByLibrary.simpleMessage("Recover"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+        "requestLocationPermission": MessageLookupByLibrary.simpleMessage(
+            "Please grant permission to access your device\'s location"),
         "returnBack": MessageLookupByLibrary.simpleMessage("Return back"),
         "showPassword": MessageLookupByLibrary.simpleMessage("Show password"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),

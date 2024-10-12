@@ -1,4 +1,8 @@
 {
+    "enableService": "Enable Service",
+    "locationServiceDisabled": "The location service on the device is disabled.",
+    "grantLocationAccess": "Allow Location Access",
+    "requestLocationPermission": "Please grant permission to access your device's location",
     "goodbye": "Good bye...",
     "successfully": "successfully",
     "logOut": "Log out",
