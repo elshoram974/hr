@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "connectedToInternet":
+            MessageLookupByLibrary.simpleMessage("Connected to the internet"),
         "createYourOwnEmail":
             MessageLookupByLibrary.simpleMessage("Create your own email"),
         "createdAt": m3,
@@ -99,7 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "needsSynchronization":
             MessageLookupByLibrary.simpleMessage("Needs synchronization"),
         "noData": MessageLookupByLibrary.simpleMessage("No Data"),
-        "noInternet": MessageLookupByLibrary.simpleMessage("No internet"),
+        "noInternetConnection":
+            MessageLookupByLibrary.simpleMessage("No internet connection"),
         "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
             "No user found for that email."),
         "notSamePass":

@@ -9,6 +9,7 @@ import 'package:hr/core/status/success/success.dart';
 import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/config/routes/routes.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
+import 'package:hr/core/utils/helper/network_helper.dart';
 
 import '../../domain/entities/user_entity.dart';
 import '../../domain/repositories/auth_repositories.dart';
@@ -35,6 +36,8 @@ class LoginControllerImp extends LoginController {
 
   @override
   Future<void> login() async {
+    if (NetworkInfo.showSnackBarWhenNoInternet) return;
+
     if (!formKey.currentState!.validate()) return;
     print("email :${email.trim()}");
     print("password :${password.trim()}");

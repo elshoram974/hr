@@ -11,10 +11,16 @@ import 'core/utils/config/locale/generated/l10n.dart';
 import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
+import 'core/utils/helper/network_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
+  await Future.wait(
+    [
+      NetworkInfo.init(),
+      Hive.initFlutter(),
+    ],
+  );
   await InitialBindings.dependencies();
   runApp(
     DevicePreview(

@@ -1,4 +1,5 @@
 {
+    "connectedToInternet": "Connected to the internet",
     "enableService": "Enable Service",
     "locationServiceDisabled": "The location service on the device is disabled.",
     "grantLocationAccess": "Allow Location Access",
@@ -31,7 +32,7 @@
     "welcome": "Welcome...",
     "humanResourcesManagement": "Human resources management",
     "pageNumberMustBiggerThan0": "pageNumber must be bigger than 0",
-    "noInternet": "No internet",
+    "noInternetConnection": "No internet connection",
     "needsSynchronization": "Needs synchronization",
     "createdAt": "Created at {createdDate}",
     "@createdAt": {

@@ -54,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "connectedToInternet":
+            MessageLookupByLibrary.simpleMessage("متصل بالإنترنت"),
         "createYourOwnEmail":
             MessageLookupByLibrary.simpleMessage("أنشئ بريدك الإلكتروني الخاص"),
         "createdAt": m3,
@@ -101,7 +103,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "needsSynchronization":
             MessageLookupByLibrary.simpleMessage("يحتاج إلى مزامنة"),
         "noData": MessageLookupByLibrary.simpleMessage("لا توجد بيانات"),
-        "noInternet": MessageLookupByLibrary.simpleMessage("لا يوجد إنترنت"),
+        "noInternetConnection":
+            MessageLookupByLibrary.simpleMessage("لا يوجد اتصال بالإنترنت"),
         "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
             "لم يتم العثور على مستخدم مرتبط بهذا البريد الإلكتروني."),
         "notSamePass":

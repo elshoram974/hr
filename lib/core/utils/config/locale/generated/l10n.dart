@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Connected to the internet`
+  String get connectedToInternet {
+    return Intl.message(
+      'Connected to the internet',
+      name: 'connectedToInternet',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enable Service`
   String get enableService {
     return Intl.message(
@@ -300,11 +310,11 @@ class S {
     );
   }
 
-  /// `No internet`
-  String get noInternet {
+  /// `No internet connection`
+  String get noInternetConnection {
     return Intl.message(
-      'No internet',
-      name: 'noInternet',
+      'No internet connection',
+      name: 'noInternetConnection',
       desc: '',
       args: [],
     );

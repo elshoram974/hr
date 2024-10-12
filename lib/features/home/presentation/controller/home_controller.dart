@@ -9,6 +9,7 @@ import 'package:hr/core/utils/config/locale/generated/l10n.dart';
 import 'package:hr/core/utils/functions/show_my_snack_bar.dart';
 import 'package:hr/core/utils/helper/device_info_helper.dart';
 import 'package:hr/core/utils/helper/geolocator_helper.dart';
+import 'package:hr/core/utils/helper/network_helper.dart';
 
 import '../../../login/domain/entities/user_entity.dart';
 import '../../domain/repositories/record_time_repositories.dart';
@@ -63,6 +64,8 @@ class HomeControllerImp extends HomeController {
 
   @override
   void recordTime() async {
+    if (NetworkInfo.showSnackBarWhenNoInternet) return;
+
     final List<dynamic> data = await Future.wait(
       [
         DeviceInfoHelper.getDeviceInfo(),
