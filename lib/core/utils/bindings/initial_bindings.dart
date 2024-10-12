@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -8,10 +9,13 @@ import '../config/controller/config_controller.dart';
 import '../constants/app_strings.dart';
 import '../services/api_services.dart';
 
-class InitialBindings extends Bindings {
-  @override
-  Future<void> dependencies() async {
-    Get.put<APIServices>(APIServices(Dio()));
+abstract final class InitialBindings {
+  const InitialBindings();
+
+  static Future<void> dependencies() async {
+    Get.put<FlutterSecureStorage>(const FlutterSecureStorage());
+
+    Get.put<APIServices>(APIServices(Dio(), Get.find<FlutterSecureStorage>()));
 
     await Get.putAsync<SharedPreferences>(SharedPreferences.getInstance);
     Get.put<ConfigController>(
@@ -20,6 +24,7 @@ class InitialBindings extends Bindings {
     Get.put<AuthLocalDataSource>(
       AuthLocalDataSourceImp(
         await Hive.openBox<Map>(AppString.kUserBox),
+        Get.find<FlutterSecureStorage>(),
       ),
     );
   }

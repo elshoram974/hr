@@ -5,7 +5,7 @@ import '../../domain/entities/user_entity.dart';
 
 abstract class AuthRemoteDataSource {
   const AuthRemoteDataSource();
-  Future<UserEntity> login({
+  Future<({UserEntity user, String token})> login({
     required String email,
     required String password,
   });
@@ -16,7 +16,7 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
   final APIServices apiServices;
 
   @override
-  Future<UserEntity> login({
+  Future<({UserEntity user, String token})> login({
     required String email,
     required String password,
   }) async {
@@ -29,6 +29,13 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     // );
     // return UserEntity.fromMap(res);
 
-    return UserEntity(name: "Mohammed Shora", email: email, image: "http://via.placeholder.com/200x2048");
+    return (
+      user: UserEntity(
+        name: "Mohammed Shora",
+        email: email,
+        image: "http://via.placeholder.com/200x2048",
+      ),
+      token: "any thing"
+    );
   }
 }

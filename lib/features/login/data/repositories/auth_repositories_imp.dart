@@ -21,13 +21,18 @@ class AuthRepositoriesImp extends AuthRepositories {
   }) {
     return executeAndHandleErrors<UserEntity>(
       () async {
-        final UserEntity user = await remoteDataSource.login(
+        final ({UserEntity user, String token}) res =
+            await remoteDataSource.login(
           email: email,
           password: password,
         );
-        // TODO:* save token
-        await localDataSource.saveUser(user);
-        return user;
+        await Future.wait(
+          [
+            localDataSource.saveUser(res.user),
+            localDataSource.saveToken(res.token),
+          ],
+        );
+        return res.user;
       },
     );
   }

@@ -15,7 +15,7 @@ import 'core/utils/config/theme/light_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await InitialBindings().dependencies();
+  await InitialBindings.dependencies();
   runApp(
     DevicePreview(
       enabled: AppInfo.isDebugMode,
