@@ -5,7 +5,7 @@ import 'core/utils/config/locale/locale_model.dart';
 abstract final class AppInfo {
   const AppInfo();
 
-  static const String baseURL = "My_url";
+  static const String baseURL = "https://hrms.niletouch.xyz";
 
   static const String appName = "HR";
   static const String appId = "com.devetechno.hr";
