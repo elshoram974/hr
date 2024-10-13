@@ -38,7 +38,12 @@ class NetworkInfo {
     );
   }
 
+  static bool _whenOpenApp = true;
   static void _networkMethod() {
+    if (_whenOpenApp) {
+      _whenOpenApp = false;
+      return;
+    }
     if (isConnected) {
       ShowMySnackBar.call(
         S.current.connectedToInternet,
@@ -52,7 +57,8 @@ class NetworkInfo {
     }
   }
 
-  /// [showSnackBarWhenNoInternet] returns true if no Internet connection
+  /// This getter returns true if no internet connection,
+  /// and will show snackbar that return no internet connection
   static bool get showSnackBarWhenNoInternet {
     if (isConnected) return false;
     ShowMySnackBar.call(
