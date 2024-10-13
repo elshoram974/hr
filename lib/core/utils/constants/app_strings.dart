@@ -4,4 +4,7 @@ abstract final class AppString {
   static const String kLocaleCode = "kLocaleCode";
   static const String kTokenKey = "kTokenKey";
   static const String kUserBox = "kUserBox";
+
+  static const String startWorkDay = "startWorkDay";
+  static const String endWorkDay = "endWorkDay";
 }

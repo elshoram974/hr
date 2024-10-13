@@ -13,11 +13,13 @@ import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
 import 'core/utils/helper/network_helper.dart';
 import 'core/utils/services/local_notification_services.dart';
+import 'core/utils/services/work_manager_services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.wait(
     [
+      WorkManagerServices.init(),
       LocalNotificationServices.initialize(),
       NetworkInfo.init(),
       Hive.initFlutter(),

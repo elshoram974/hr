@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart' show kDebugMode;
+import 'package:flutter/material.dart';
 
 import 'core/utils/config/locale/locale_model.dart';
 
@@ -13,6 +14,18 @@ abstract final class AppInfo {
   static const int appBuildVersion = 1;
 
   static const bool isDebugMode = kDebugMode;
+
+  /// Work start time
+  static final TimeOfDay workStartTime = const TimeOfDay(hour: 9, minute: 0);
+
+  /// Number of work hours
+  static final int workHoursDuration = 8;
+
+  /// Determines how to calculate end of work
+  static bool isCalculatedFromStart = true;
+
+  /// Time when the button is pressed
+  static DateTime? customStartTime;
 
   // * To add locale .. You have to add it in package(flutter intel) and add text in its file .arb and don't forget to add it in info.plist file
   static const List<LocaleModel> supportedLocales = [

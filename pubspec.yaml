@@ -46,7 +46,11 @@ dependencies:
 
   # * check if user open location or not
   permission_handler: ^11.3.1
+
+  # * Notification in background
   flutter_local_notifications: ^17.2.3
+  timezone: ^0.9.4
+  workmanager: ^0.5.2
 
 dev_dependencies:
   flutter_test:
